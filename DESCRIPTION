@@ -1,0 +1,15 @@
+Package: metexplore3api?
+Title: R Package Client for MetExplore 3 REST api
+Version: 1.0.0
+Author: person("OpenAPI Generator community", email = "contact-metexplore@inrae.fr", role = c("aut", "cre"))
+Maintainer: OpenAPI Generator community <contact-metexplore@inrae.fr>
+Description: Rest API for [MetExplore](https://metexplore.toulouse.inrae.fr/index.html/) content.
+URL: https://github.com/GIT_USER_ID/GIT_REPO_ID
+BugReports: https://github.com/GIT_USER_ID/GIT_REPO_ID/issues
+Depends: R (>= 3.3)
+Encoding: UTF-8
+License: Apache 2.0
+LazyData: true
+Suggests: testthat
+Imports: jsonlite, httr, R6, base64enc, stringr
+RoxygenNote: 7.2.1
