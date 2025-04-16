@@ -53,7 +53,7 @@ install.packages("metexplore3api_1.0.0.tar.gz", repos = NULL, type = "source")
 ### Usage
 
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 ```
 
 ### Reformat code
