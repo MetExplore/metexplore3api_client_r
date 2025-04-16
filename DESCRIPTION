@@ -1,4 +1,4 @@
-Package: metexplore3api?
+Package: metexplore3api
 Title: R Package Client for MetExplore 3 REST api
 Version: 1.0.0
 Author: person("OpenAPI Generator community", email = "contact-metexplore@inrae.fr", role = c("aut", "cre"))
