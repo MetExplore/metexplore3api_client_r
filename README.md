@@ -28,14 +28,14 @@ install.packages("base64enc")
 git clone https://github.com/GIT_USER_ID/GIT_REPO_ID
 cd GIT_REPO_ID
 R CMD build .
-R CMD check metexplore3api?_1.0.0.tar.gz --no-manual
+R CMD check metexplore3api_1.0.0.tar.gz --no-manual
 R CMD INSTALL --preclean metexplore3api?_1.0.0.tar.gz
 ```
 
 ### Install the package
 
 ```R
-install.packages("metexplore3api?")
+install.packages("metexplore3api")
 ```
 
 To install directly from Github, use `devtools`:
@@ -47,7 +47,7 @@ install_github("GIT_USER_ID/GIT_REPO_ID")
 
 To install the package from a local file:
 ```R
-install.packages("metexplore3api?_1.0.0.tar.gz", repos = NULL, type = "source")
+install.packages("metexplore3api_1.0.0.tar.gz", repos = NULL, type = "source")
 ```
 
 ### Usage
