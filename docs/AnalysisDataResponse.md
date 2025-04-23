@@ -1,4 +1,4 @@
-# metexplore3api?::AnalysisDataResponse
+# metexplore3api::AnalysisDataResponse
 
 
 ## Properties

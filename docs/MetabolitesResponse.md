@@ -1,4 +1,4 @@
-# metexplore3api?::MetabolitesResponse
+# metexplore3api::MetabolitesResponse
 
 
 ## Properties

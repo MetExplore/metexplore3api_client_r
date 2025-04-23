@@ -98,7 +98,7 @@ JobsResponse <- R6::R6Class(
         self$`status` <- this_object$`status`
       }
       if (!is.null(this_object$`results`)) {
-        self$`results` <- ApiClient$new()$deserializeObj(this_object$`results`, "array[Job]", loadNamespace("metexplore3api?"))
+        self$`results` <- ApiClient$new()$deserializeObj(this_object$`results`, "array[Job]", loadNamespace("metexplore3api"))
       }
       self
     },
@@ -156,7 +156,7 @@ JobsResponse <- R6::R6Class(
       self$`message` <- this_object$`message`
       self$`success` <- this_object$`success`
       self$`status` <- this_object$`status`
-      self$`results` <- ApiClient$new()$deserializeObj(this_object$`results`, "array[Job]", loadNamespace("metexplore3api?"))
+      self$`results` <- ApiClient$new()$deserializeObj(this_object$`results`, "array[Job]", loadNamespace("metexplore3api"))
       self
     },
 

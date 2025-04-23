@@ -1,4 +1,4 @@
-# metexplore3api?::UpdateMappingAnalysisRequest
+# metexplore3api::UpdateMappingAnalysisRequest
 
 
 ## Properties

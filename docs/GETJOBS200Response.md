@@ -1,4 +1,4 @@
-# metexplore3api?::GETJOBS200Response
+# metexplore3api::GETJOBS200Response
 
 
 ## Properties

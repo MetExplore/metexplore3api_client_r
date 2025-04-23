@@ -1,4 +1,4 @@
-# metexplore3api?::GeneResponse
+# metexplore3api::GeneResponse
 
 
 ## Properties

@@ -19,7 +19,7 @@ add a step for a specific analysis
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # add step
 #
@@ -71,7 +71,7 @@ delete a Step in an analysis
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # Remove a step
 #
@@ -123,7 +123,7 @@ Get a specific step of an analysis
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # Get specific step of an analysis
 #
@@ -177,7 +177,7 @@ update a step for a specific analysis
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # update Step
 #

@@ -16,7 +16,7 @@ get all the jobs of a user or one job if the id is provided
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # get jobs
 #

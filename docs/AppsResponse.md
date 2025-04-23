@@ -1,4 +1,4 @@
-# metexplore3api?::AppsResponse
+# metexplore3api::AppsResponse
 
 
 ## Properties

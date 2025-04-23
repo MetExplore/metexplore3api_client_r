@@ -98,7 +98,7 @@ MetabolitesResponse <- R6::R6Class(
         self$`status` <- this_object$`status`
       }
       if (!is.null(this_object$`metabolites`)) {
-        self$`metabolites` <- ApiClient$new()$deserializeObj(this_object$`metabolites`, "array[Metabolite]", loadNamespace("metexplore3api?"))
+        self$`metabolites` <- ApiClient$new()$deserializeObj(this_object$`metabolites`, "array[Metabolite]", loadNamespace("metexplore3api"))
       }
       self
     },
@@ -156,7 +156,7 @@ MetabolitesResponse <- R6::R6Class(
       self$`message` <- this_object$`message`
       self$`success` <- this_object$`success`
       self$`status` <- this_object$`status`
-      self$`metabolites` <- ApiClient$new()$deserializeObj(this_object$`metabolites`, "array[Metabolite]", loadNamespace("metexplore3api?"))
+      self$`metabolites` <- ApiClient$new()$deserializeObj(this_object$`metabolites`, "array[Metabolite]", loadNamespace("metexplore3api"))
       self
     },
 

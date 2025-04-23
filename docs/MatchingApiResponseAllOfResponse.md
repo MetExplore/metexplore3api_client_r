@@ -1,4 +1,4 @@
-# metexplore3api?::MatchingApiResponseAllOfResponse
+# metexplore3api::MatchingApiResponseAllOfResponse
 
 Response from MetaboAnalyst API
 

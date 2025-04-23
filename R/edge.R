@@ -130,7 +130,7 @@ Edge <- R6::R6Class(
         self$`label` <- this_object$`label`
       }
       if (!is.null(this_object$`metadata`)) {
-        self$`metadata` <- ApiClient$new()$deserializeObj(this_object$`metadata`, "map(AnyType)", loadNamespace("metexplore3api?"))
+        self$`metadata` <- ApiClient$new()$deserializeObj(this_object$`metadata`, "map(AnyType)", loadNamespace("metexplore3api"))
       }
       self
     },
@@ -206,7 +206,7 @@ Edge <- R6::R6Class(
       self$`target` <- this_object$`target`
       self$`directed` <- this_object$`directed`
       self$`label` <- this_object$`label`
-      self$`metadata` <- ApiClient$new()$deserializeObj(this_object$`metadata`, "map(AnyType)", loadNamespace("metexplore3api?"))
+      self$`metadata` <- ApiClient$new()$deserializeObj(this_object$`metadata`, "map(AnyType)", loadNamespace("metexplore3api"))
       self
     },
 

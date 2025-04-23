@@ -1,4 +1,4 @@
-# metexplore3api?::Analysis
+# metexplore3api::Analysis
 
 Analysis object
 

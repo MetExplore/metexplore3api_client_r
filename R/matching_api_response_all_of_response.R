@@ -146,31 +146,31 @@ MatchingApiResponseAllOfResponse <- R6::R6Class(
     fromJSON = function(input_json) {
       this_object <- jsonlite::fromJSON(input_json)
       if (!is.null(this_object$`Query`)) {
-        self$`Query` <- ApiClient$new()$deserializeObj(this_object$`Query`, "array[character]", loadNamespace("metexplore3api?"))
+        self$`Query` <- ApiClient$new()$deserializeObj(this_object$`Query`, "array[character]", loadNamespace("metexplore3api"))
       }
       if (!is.null(this_object$`Match`)) {
-        self$`Match` <- ApiClient$new()$deserializeObj(this_object$`Match`, "array[character]", loadNamespace("metexplore3api?"))
+        self$`Match` <- ApiClient$new()$deserializeObj(this_object$`Match`, "array[character]", loadNamespace("metexplore3api"))
       }
       if (!is.null(this_object$`HMDB`)) {
-        self$`HMDB` <- ApiClient$new()$deserializeObj(this_object$`HMDB`, "array[character]", loadNamespace("metexplore3api?"))
+        self$`HMDB` <- ApiClient$new()$deserializeObj(this_object$`HMDB`, "array[character]", loadNamespace("metexplore3api"))
       }
       if (!is.null(this_object$`PubChem`)) {
-        self$`PubChem` <- ApiClient$new()$deserializeObj(this_object$`PubChem`, "array[character]", loadNamespace("metexplore3api?"))
+        self$`PubChem` <- ApiClient$new()$deserializeObj(this_object$`PubChem`, "array[character]", loadNamespace("metexplore3api"))
       }
       if (!is.null(this_object$`ChEBI`)) {
-        self$`ChEBI` <- ApiClient$new()$deserializeObj(this_object$`ChEBI`, "array[character]", loadNamespace("metexplore3api?"))
+        self$`ChEBI` <- ApiClient$new()$deserializeObj(this_object$`ChEBI`, "array[character]", loadNamespace("metexplore3api"))
       }
       if (!is.null(this_object$`KEGG`)) {
-        self$`KEGG` <- ApiClient$new()$deserializeObj(this_object$`KEGG`, "array[character]", loadNamespace("metexplore3api?"))
+        self$`KEGG` <- ApiClient$new()$deserializeObj(this_object$`KEGG`, "array[character]", loadNamespace("metexplore3api"))
       }
       if (!is.null(this_object$`METLIN`)) {
-        self$`METLIN` <- ApiClient$new()$deserializeObj(this_object$`METLIN`, "array[character]", loadNamespace("metexplore3api?"))
+        self$`METLIN` <- ApiClient$new()$deserializeObj(this_object$`METLIN`, "array[character]", loadNamespace("metexplore3api"))
       }
       if (!is.null(this_object$`SMILES`)) {
-        self$`SMILES` <- ApiClient$new()$deserializeObj(this_object$`SMILES`, "array[character]", loadNamespace("metexplore3api?"))
+        self$`SMILES` <- ApiClient$new()$deserializeObj(this_object$`SMILES`, "array[character]", loadNamespace("metexplore3api"))
       }
       if (!is.null(this_object$`Comment`)) {
-        self$`Comment` <- ApiClient$new()$deserializeObj(this_object$`Comment`, "array[character]", loadNamespace("metexplore3api?"))
+        self$`Comment` <- ApiClient$new()$deserializeObj(this_object$`Comment`, "array[character]", loadNamespace("metexplore3api"))
       }
       self
     },
@@ -265,15 +265,15 @@ MatchingApiResponseAllOfResponse <- R6::R6Class(
     #' @return the instance of MatchingApiResponseAllOfResponse
     fromJSONString = function(input_json) {
       this_object <- jsonlite::fromJSON(input_json)
-      self$`Query` <- ApiClient$new()$deserializeObj(this_object$`Query`, "array[character]", loadNamespace("metexplore3api?"))
-      self$`Match` <- ApiClient$new()$deserializeObj(this_object$`Match`, "array[character]", loadNamespace("metexplore3api?"))
-      self$`HMDB` <- ApiClient$new()$deserializeObj(this_object$`HMDB`, "array[character]", loadNamespace("metexplore3api?"))
-      self$`PubChem` <- ApiClient$new()$deserializeObj(this_object$`PubChem`, "array[character]", loadNamespace("metexplore3api?"))
-      self$`ChEBI` <- ApiClient$new()$deserializeObj(this_object$`ChEBI`, "array[character]", loadNamespace("metexplore3api?"))
-      self$`KEGG` <- ApiClient$new()$deserializeObj(this_object$`KEGG`, "array[character]", loadNamespace("metexplore3api?"))
-      self$`METLIN` <- ApiClient$new()$deserializeObj(this_object$`METLIN`, "array[character]", loadNamespace("metexplore3api?"))
-      self$`SMILES` <- ApiClient$new()$deserializeObj(this_object$`SMILES`, "array[character]", loadNamespace("metexplore3api?"))
-      self$`Comment` <- ApiClient$new()$deserializeObj(this_object$`Comment`, "array[character]", loadNamespace("metexplore3api?"))
+      self$`Query` <- ApiClient$new()$deserializeObj(this_object$`Query`, "array[character]", loadNamespace("metexplore3api"))
+      self$`Match` <- ApiClient$new()$deserializeObj(this_object$`Match`, "array[character]", loadNamespace("metexplore3api"))
+      self$`HMDB` <- ApiClient$new()$deserializeObj(this_object$`HMDB`, "array[character]", loadNamespace("metexplore3api"))
+      self$`PubChem` <- ApiClient$new()$deserializeObj(this_object$`PubChem`, "array[character]", loadNamespace("metexplore3api"))
+      self$`ChEBI` <- ApiClient$new()$deserializeObj(this_object$`ChEBI`, "array[character]", loadNamespace("metexplore3api"))
+      self$`KEGG` <- ApiClient$new()$deserializeObj(this_object$`KEGG`, "array[character]", loadNamespace("metexplore3api"))
+      self$`METLIN` <- ApiClient$new()$deserializeObj(this_object$`METLIN`, "array[character]", loadNamespace("metexplore3api"))
+      self$`SMILES` <- ApiClient$new()$deserializeObj(this_object$`SMILES`, "array[character]", loadNamespace("metexplore3api"))
+      self$`Comment` <- ApiClient$new()$deserializeObj(this_object$`Comment`, "array[character]", loadNamespace("metexplore3api"))
       self
     },
 

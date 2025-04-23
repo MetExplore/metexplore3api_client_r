@@ -16,7 +16,7 @@ filter identifiers of metabolic entities by ids of other metabolic entities
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # filter identifiers of metabolic entities by ids of other metabolic entities
 #

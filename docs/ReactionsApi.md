@@ -20,7 +20,7 @@ get the number of reactions in a network
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # get the number of reactions in a network
 #
@@ -70,12 +70,12 @@ deleteReaction for Reaction
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # delete Reaction
 #
 # prepare function argument(s)
-var_reactions_response <- c(ReactionsResponse$new("message_example", "success_example", 123, c(Reaction$new(123, "name_example", "db_identifier_example", 123, "spontaneous_example", "generic_example", "type_example", "ec_example", 123, "date_modification_example")))) # array[ReactionsResponse] |  (Optional)
+var_reactions_response <- c(ReactionsResponse$new("message_example", "success_example", 123, c(Reaction$new(123, "name_example", "db_identifier_example", 123, 123, 123, "type_example", "ec_example", 123, 123, 123, "eq_identifier_example", "eq_name_example")))) # array[ReactionsResponse] |  (Optional)
 
 api_instance <- ReactionsApi$new()
 # Configure HTTP bearer authorization: userAuth
@@ -123,7 +123,7 @@ getReaction from Reaction
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # get Reaction
 #
@@ -175,12 +175,12 @@ addReaction for Reaction
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # add Reaction
 #
 # prepare function argument(s)
-var_reaction <- c(Reaction$new(123, "name_example", "db_identifier_example", 123, "spontaneous_example", "generic_example", "type_example", "ec_example", 123, "date_modification_example")) # array[Reaction] |  (Optional)
+var_reaction <- c(Reaction$new(123, "name_example", "db_identifier_example", 123, 123, 123, "type_example", "ec_example", 123, 123, 123, "eq_identifier_example", "eq_name_example")) # array[Reaction] |  (Optional)
 
 api_instance <- ReactionsApi$new()
 # Configure HTTP bearer authorization: userAuth
@@ -229,12 +229,12 @@ updateReaction for Reaction
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # update Reaction
 #
 # prepare function argument(s)
-var_reactions_response <- c(ReactionsResponse$new("message_example", "success_example", 123, c(Reaction$new(123, "name_example", "db_identifier_example", 123, "spontaneous_example", "generic_example", "type_example", "ec_example", 123, "date_modification_example")))) # array[ReactionsResponse] |  (Optional)
+var_reactions_response <- c(ReactionsResponse$new("message_example", "success_example", 123, c(Reaction$new(123, "name_example", "db_identifier_example", 123, 123, 123, "type_example", "ec_example", 123, 123, 123, "eq_identifier_example", "eq_name_example")))) # array[ReactionsResponse] |  (Optional)
 
 api_instance <- ReactionsApi$new()
 # Configure HTTP bearer authorization: userAuth

@@ -1,4 +1,4 @@
-# metexplore3api?::ProteinsResponse
+# metexplore3api::ProteinsResponse
 
 
 ## Properties

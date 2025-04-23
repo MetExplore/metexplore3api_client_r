@@ -1,4 +1,4 @@
-# metexplore3api?::Job
+# metexplore3api::Job
 
 Job data
 

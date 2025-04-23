@@ -1,4 +1,4 @@
-# metexplore3api?::GETAPPS200Response
+# metexplore3api::GETAPPS200Response
 
 
 ## Properties

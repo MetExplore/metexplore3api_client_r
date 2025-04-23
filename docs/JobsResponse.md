@@ -1,4 +1,4 @@
-# metexplore3api?::JobsResponse
+# metexplore3api::JobsResponse
 
 
 ## Properties

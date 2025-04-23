@@ -1,4 +1,4 @@
-# metexplore3api?::DELCOLLECTIONRequest
+# metexplore3api::DELCOLLECTIONRequest
 
 Object containing the collection id
 

@@ -1,4 +1,4 @@
-# metexplore3api?::AnalysisData
+# metexplore3api::AnalysisData
 
 Analysis Data Step object
 

@@ -19,7 +19,7 @@ add an Analysis with data in the body of the request as json (name, description 
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # add Analysis
 #
@@ -73,7 +73,7 @@ delete the Analysis with its id
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # delete Analysis
 #
@@ -127,7 +127,7 @@ get data from Analyses : if no id specified, all the analyses ; else only the on
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # get Analyses
 #
@@ -181,7 +181,7 @@ update one Analysis with its id, the data to modify is passed in the body of the
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # update Analysis
 #

@@ -19,7 +19,7 @@ add an app and generate a token
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # add an app and generate a token
 #
@@ -73,7 +73,7 @@ Delete an api app. Requires admin authentification. The app that are protected c
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # delete an api app. Requires admin authentification
 #
@@ -127,7 +127,7 @@ get api apps : if no id specified, all the apps ; else only the one with corresp
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # get api apps
 #
@@ -181,7 +181,7 @@ Update one Api App with its id, the data to modify is passed in the body of the 
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # update Api App
 #

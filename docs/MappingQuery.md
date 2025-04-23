@@ -1,4 +1,4 @@
-# metexplore3api?::MappingQuery
+# metexplore3api::MappingQuery
 
 Mapping query
 
@@ -7,6 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **entries** | [**MappingInputTable**](MappingInputTable.md) |  | 
 **id_network** | **integer** | id of the network in the database | 
-**name** | **character** | name of the mapping | 
+**type** | **character** | the type of biodata on which the mapping is done | 
 
 

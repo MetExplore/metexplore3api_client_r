@@ -66,7 +66,7 @@ Node <- R6::R6Class(
         self$`label` <- this_object$`label`
       }
       if (!is.null(this_object$`metadata`)) {
-        self$`metadata` <- ApiClient$new()$deserializeObj(this_object$`metadata`, "map(AnyType)", loadNamespace("metexplore3api?"))
+        self$`metadata` <- ApiClient$new()$deserializeObj(this_object$`metadata`, "map(AnyType)", loadNamespace("metexplore3api"))
       }
       self
     },
@@ -106,7 +106,7 @@ Node <- R6::R6Class(
     fromJSONString = function(input_json) {
       this_object <- jsonlite::fromJSON(input_json)
       self$`label` <- this_object$`label`
-      self$`metadata` <- ApiClient$new()$deserializeObj(this_object$`metadata`, "map(AnyType)", loadNamespace("metexplore3api?"))
+      self$`metadata` <- ApiClient$new()$deserializeObj(this_object$`metadata`, "map(AnyType)", loadNamespace("metexplore3api"))
       self
     },
 

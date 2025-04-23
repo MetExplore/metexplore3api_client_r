@@ -98,7 +98,7 @@ ApiAppsResponse <- R6::R6Class(
         self$`status` <- this_object$`status`
       }
       if (!is.null(this_object$`apps`)) {
-        self$`apps` <- ApiClient$new()$deserializeObj(this_object$`apps`, "array[ApiApp]", loadNamespace("metexplore3api?"))
+        self$`apps` <- ApiClient$new()$deserializeObj(this_object$`apps`, "array[ApiApp]", loadNamespace("metexplore3api"))
       }
       self
     },
@@ -156,7 +156,7 @@ ApiAppsResponse <- R6::R6Class(
       self$`message` <- this_object$`message`
       self$`success` <- this_object$`success`
       self$`status` <- this_object$`status`
-      self$`apps` <- ApiClient$new()$deserializeObj(this_object$`apps`, "array[ApiApp]", loadNamespace("metexplore3api?"))
+      self$`apps` <- ApiClient$new()$deserializeObj(this_object$`apps`, "array[ApiApp]", loadNamespace("metexplore3api"))
       self
     },
 

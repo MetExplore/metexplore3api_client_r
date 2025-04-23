@@ -1,4 +1,4 @@
-# metexplore3api?::App
+# metexplore3api::App
 
 MetExplore App
 

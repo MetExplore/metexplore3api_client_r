@@ -13,20 +13,20 @@ test_that("label", {
   #expect_equal(model.instance$`label`, "EXPECTED_RESULT")
 })
 
-test_that("nb_total_metabolites", {
-  # tests for the property `nb_total_metabolites` (integer)
-  # total number of metabolites
+test_that("nb_total_biodata", {
+  # tests for the property `nb_total_biodata` (integer)
+  # total number of the mapped biodata (metabolites, genes, ...)
 
   # uncomment below to test the property
-  #expect_equal(model.instance$`nb_total_metabolites`, "EXPECTED_RESULT")
+  #expect_equal(model.instance$`nb_total_biodata`, "EXPECTED_RESULT")
 })
 
-test_that("nb_mapped_metabolites", {
-  # tests for the property `nb_mapped_metabolites` (integer)
-  # number of mapped metabolites
+test_that("nb_mapped_biodata", {
+  # tests for the property `nb_mapped_biodata` (integer)
+  # number of mapped biodata (metabolites, genes, ...)
 
   # uncomment below to test the property
-  #expect_equal(model.instance$`nb_mapped_metabolites`, "EXPECTED_RESULT")
+  #expect_equal(model.instance$`nb_mapped_biodata`, "EXPECTED_RESULT")
 })
 
 test_that("nb_total_reactions", {
@@ -45,28 +45,28 @@ test_that("nb_mapped_reactions", {
   #expect_equal(model.instance$`nb_mapped_reactions`, "EXPECTED_RESULT")
 })
 
-test_that("pval_metabolites", {
-  # tests for the property `pval_metabolites` (numeric)
-  # result of the right-tailed fisher test for metabolites
+test_that("pval", {
+  # tests for the property `pval` (numeric)
+  # result of the right-tailed fisher test for the pathway
 
   # uncomment below to test the property
-  #expect_equal(model.instance$`pval_metabolites`, "EXPECTED_RESULT")
+  #expect_equal(model.instance$`pval`, "EXPECTED_RESULT")
 })
 
-test_that("bonferroni_pval_metabolites", {
-  # tests for the property `bonferroni_pval_metabolites` (numeric)
-  # bonferroni correction of the p-value for metabolites
+test_that("bonferroni_pval", {
+  # tests for the property `bonferroni_pval` (numeric)
+  # bonferroni correction of the p-value for the pathway
 
   # uncomment below to test the property
-  #expect_equal(model.instance$`bonferroni_pval_metabolites`, "EXPECTED_RESULT")
+  #expect_equal(model.instance$`bonferroni_pval`, "EXPECTED_RESULT")
 })
 
-test_that("bh_pval_metabolites", {
-  # tests for the property `bh_pval_metabolites` (numeric)
-  # Benjamini-Hochberg correction of the p-value for metabolites
+test_that("bh_pval", {
+  # tests for the property `bh_pval` (numeric)
+  # Benjamini-Hochberg correction of the p-value for the pathway
 
   # uncomment below to test the property
-  #expect_equal(model.instance$`bh_pval_metabolites`, "EXPECTED_RESULT")
+  #expect_equal(model.instance$`bh_pval`, "EXPECTED_RESULT")
 })
 
 test_that("pval_reactions", {

@@ -306,7 +306,7 @@ StatisticsMapping <- R6::R6Class(
         self$`nb_total_compartments` <- this_object$`nb_total_compartments`
       }
       if (!is.null(this_object$`enrichment`)) {
-        self$`enrichment` <- ApiClient$new()$deserializeObj(this_object$`enrichment`, "map(Enrichment)", loadNamespace("metexplore3api?"))
+        self$`enrichment` <- ApiClient$new()$deserializeObj(this_object$`enrichment`, "map(Enrichment)", loadNamespace("metexplore3api"))
       }
       self
     },
@@ -481,7 +481,7 @@ StatisticsMapping <- R6::R6Class(
       self$`nb_total_enzymes` <- this_object$`nb_total_enzymes`
       self$`nb_mapped_compartments` <- this_object$`nb_mapped_compartments`
       self$`nb_total_compartments` <- this_object$`nb_total_compartments`
-      self$`enrichment` <- ApiClient$new()$deserializeObj(this_object$`enrichment`, "map(Enrichment)", loadNamespace("metexplore3api?"))
+      self$`enrichment` <- ApiClient$new()$deserializeObj(this_object$`enrichment`, "map(Enrichment)", loadNamespace("metexplore3api"))
       self
     },
 

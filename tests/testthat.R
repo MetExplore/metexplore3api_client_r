@@ -1,4 +1,4 @@
 library(testthat)
-library(metexplore3api?)
+library(metexplore3api)
 
-test_check("metexplore3api?")
+test_check("metexplore3api")

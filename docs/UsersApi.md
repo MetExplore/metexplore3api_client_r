@@ -16,7 +16,7 @@ Create user into the system
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # Create user into the system
 #
@@ -66,7 +66,7 @@ Logs user into the system
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # Logs user into the system
 #
@@ -116,7 +116,7 @@ Logs user into the system with a token
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # Logs user into the system with a token
 #

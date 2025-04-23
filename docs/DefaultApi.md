@@ -16,7 +16,7 @@ Root of metexplore3-api
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # Root of metexplore3-api
 #

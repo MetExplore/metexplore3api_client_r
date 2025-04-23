@@ -19,7 +19,7 @@ add an analysis data step
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # add AnalysisData
 #
@@ -72,7 +72,7 @@ delete an analysis data step
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # delete AnalysisData
 #
@@ -125,7 +125,7 @@ get an analysis data by id or all the ones from an Analysis
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # get AnalysisData
 #
@@ -180,7 +180,7 @@ update an analysis data step with the body of the request
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # update AnalysisData
 #

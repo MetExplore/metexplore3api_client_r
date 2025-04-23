@@ -5,10 +5,32 @@ context("Test MappingApi")
 
 api_instance <- MappingApi$new()
 
+test_that("MAPPINGGENESIDS", {
+  # tests for MAPPINGGENESIDS
+  # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
+  # Map genes ids onto a metabolic Network
+  # @param mapping_query MappingQuery  (optional)
+  # @return [MappingResponse]
+
+  # uncomment below to test the operation
+  #expect_equal(result, "EXPECTED_RESULT")
+})
+
 test_that("MAPPINGMETABOLITESIDS", {
   # tests for MAPPINGMETABOLITESIDS
   # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
   # Map metabolic ids onto a metabolic Network
+  # @param mapping_query MappingQuery  (optional)
+  # @return [MappingResponse]
+
+  # uncomment below to test the operation
+  #expect_equal(result, "EXPECTED_RESULT")
+})
+
+test_that("MAPPINGREACTIONSIDS", {
+  # tests for MAPPINGREACTIONSIDS
+  # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
+  # Map reactions ids onto a metabolic Network
   # @param mapping_query MappingQuery  (optional)
   # @return [MappingResponse]
 

@@ -1,4 +1,4 @@
-# metexplore3api?::Permission
+# metexplore3api::Permission
 
 Permission of the user on a collection
 

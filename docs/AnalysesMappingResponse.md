@@ -1,4 +1,4 @@
-# metexplore3api?::AnalysesMappingResponse
+# metexplore3api::AnalysesMappingResponse
 
 
 ## Properties

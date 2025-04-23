@@ -29,10 +29,10 @@ test_that("status", {
   #expect_equal(model.instance$`status`, "EXPECTED_RESULT")
 })
 
-test_that("reactions", {
-  # tests for the property `reactions` (array[Reaction])
+test_that("results", {
+  # tests for the property `results` (array[Reaction])
   # Array of Reaction
 
   # uncomment below to test the property
-  #expect_equal(model.instance$`reactions`, "EXPECTED_RESULT")
+  #expect_equal(model.instance$`results`, "EXPECTED_RESULT")
 })

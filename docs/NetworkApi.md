@@ -16,7 +16,7 @@ Delete a Network.
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # delete a Metabolic Network
 #

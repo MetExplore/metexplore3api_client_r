@@ -1,4 +1,4 @@
-# metexplore3api?::StepResponse
+# metexplore3api::StepResponse
 
 
 ## Properties

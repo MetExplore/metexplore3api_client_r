@@ -1,4 +1,4 @@
-# metexplore3api?::CompartmentResponse
+# metexplore3api::CompartmentResponse
 
 
 ## Properties

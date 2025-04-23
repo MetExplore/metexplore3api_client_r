@@ -1,4 +1,4 @@
-# metexplore3api?::CollectionEntity
+# metexplore3api::CollectionEntity
 
 Entity linked to a Collection
 

@@ -20,10 +20,10 @@ test_that("id_network", {
   #expect_equal(model.instance$`id_network`, "EXPECTED_RESULT")
 })
 
-test_that("name", {
-  # tests for the property `name` (character)
-  # name of the mapping
+test_that("type", {
+  # tests for the property `type` (character)
+  # the type of biodata on which the mapping is done
 
   # uncomment below to test the property
-  #expect_equal(model.instance$`name`, "EXPECTED_RESULT")
+  #expect_equal(model.instance$`type`, "EXPECTED_RESULT")
 })

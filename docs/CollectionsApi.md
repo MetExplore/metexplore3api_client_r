@@ -16,7 +16,7 @@ Update a Metabolic Network Collection
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # update a Metabolic Network Collection
 #

@@ -1,4 +1,4 @@
-# metexplore3api?::Collection
+# metexplore3api::Collection
 
 Collection object.
 

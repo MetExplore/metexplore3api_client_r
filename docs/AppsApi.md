@@ -16,7 +16,7 @@ get the list and description of the MetExplore apps
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # get MetExplore apps
 #

@@ -1,4 +1,4 @@
-# metexplore3api?::Edge
+# metexplore3api::Edge
 
 
 ## Properties

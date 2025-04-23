@@ -9,7 +9,7 @@
 #' @format An \code{R6Class} generator object
 #' @field entries  \link{MappingInputTable}
 #' @field id_network id of the network in the database integer
-#' @field name name of the mapping character
+#' @field type the type of biodata on which the mapping is done character
 #' @importFrom R6 R6Class
 #' @importFrom jsonlite fromJSON toJSON
 #' @export
@@ -18,16 +18,16 @@ MappingQuery <- R6::R6Class(
   public = list(
     `entries` = NULL,
     `id_network` = NULL,
-    `name` = NULL,
+    `type` = NULL,
 
     #' @description
     #' Initialize a new MappingQuery class.
     #'
     #' @param entries entries
     #' @param id_network id of the network in the database
-    #' @param name name of the mapping
+    #' @param type the type of biodata on which the mapping is done
     #' @param ... Other optional arguments.
-    initialize = function(`entries`, `id_network`, `name`, ...) {
+    initialize = function(`entries`, `id_network`, `type`, ...) {
       if (!missing(`entries`)) {
         stopifnot(R6::is.R6(`entries`))
         self$`entries` <- `entries`
@@ -38,11 +38,11 @@ MappingQuery <- R6::R6Class(
         }
         self$`id_network` <- `id_network`
       }
-      if (!missing(`name`)) {
-        if (!(is.character(`name`) && length(`name`) == 1)) {
-          stop(paste("Error! Invalid data for `name`. Must be a string:", `name`))
+      if (!missing(`type`)) {
+        if (!(is.character(`type`) && length(`type`) == 1)) {
+          stop(paste("Error! Invalid data for `type`. Must be a string:", `type`))
         }
-        self$`name` <- `name`
+        self$`type` <- `type`
       }
     },
 
@@ -60,9 +60,9 @@ MappingQuery <- R6::R6Class(
         MappingQueryObject[["id_network"]] <-
           self$`id_network`
       }
-      if (!is.null(self$`name`)) {
-        MappingQueryObject[["name"]] <-
-          self$`name`
+      if (!is.null(self$`type`)) {
+        MappingQueryObject[["type"]] <-
+          self$`type`
       }
       MappingQueryObject
     },
@@ -82,8 +82,8 @@ MappingQuery <- R6::R6Class(
       if (!is.null(this_object$`id_network`)) {
         self$`id_network` <- this_object$`id_network`
       }
-      if (!is.null(this_object$`name`)) {
-        self$`name` <- this_object$`name`
+      if (!is.null(this_object$`type`)) {
+        self$`type` <- this_object$`type`
       }
       self
     },
@@ -110,12 +110,12 @@ MappingQuery <- R6::R6Class(
           self$`id_network`
           )
         },
-        if (!is.null(self$`name`)) {
+        if (!is.null(self$`type`)) {
           sprintf(
-          '"name":
+          '"type":
             "%s"
                     ',
-          self$`name`
+          self$`type`
           )
         }
       )
@@ -132,7 +132,7 @@ MappingQuery <- R6::R6Class(
       this_object <- jsonlite::fromJSON(input_json)
       self$`entries` <- MappingInputTable$new()$fromJSON(jsonlite::toJSON(this_object$`entries`, auto_unbox = TRUE, digits = NA))
       self$`id_network` <- this_object$`id_network`
-      self$`name` <- this_object$`name`
+      self$`type` <- this_object$`type`
       self
     },
 
@@ -156,13 +156,13 @@ MappingQuery <- R6::R6Class(
       } else {
         stop(paste("The JSON input `", input, "` is invalid for MappingQuery: the required field `id_network` is missing."))
       }
-      # check the required field `name`
-      if (!is.null(input_json$`name`)) {
-        if (!(is.character(input_json$`name`) && length(input_json$`name`) == 1)) {
-          stop(paste("Error! Invalid data for `name`. Must be a string:", input_json$`name`))
+      # check the required field `type`
+      if (!is.null(input_json$`type`)) {
+        if (!(is.character(input_json$`type`) && length(input_json$`type`) == 1)) {
+          stop(paste("Error! Invalid data for `type`. Must be a string:", input_json$`type`))
         }
       } else {
-        stop(paste("The JSON input `", input, "` is invalid for MappingQuery: the required field `name` is missing."))
+        stop(paste("The JSON input `", input, "` is invalid for MappingQuery: the required field `type` is missing."))
       }
     },
 
@@ -189,8 +189,8 @@ MappingQuery <- R6::R6Class(
         return(FALSE)
       }
 
-      # check if the required `name` is null
-      if (is.null(self$`name`)) {
+      # check if the required `type` is null
+      if (is.null(self$`type`)) {
         return(FALSE)
       }
 
@@ -213,9 +213,9 @@ MappingQuery <- R6::R6Class(
         invalid_fields["id_network"] <- "Non-nullable required field `id_network` cannot be null."
       }
 
-      # check if the required `name` is null
-      if (is.null(self$`name`)) {
-        invalid_fields["name"] <- "Non-nullable required field `name` cannot be null."
+      # check if the required `type` is null
+      if (is.null(self$`type`)) {
+        invalid_fields["type"] <- "Non-nullable required field `type` cannot be null."
       }
 
       invalid_fields

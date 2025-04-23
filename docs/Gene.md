@@ -1,4 +1,4 @@
-# metexplore3api?::Gene
+# metexplore3api::Gene
 
 Gene object
 

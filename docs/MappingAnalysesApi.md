@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **AddMappingAnalyses**
-> AnalysisResponse AddMappingAnalyses(mapping_output = var.mapping_output)
+> AnalysisResponse AddMappingAnalyses(add_mapping_analyses_request = var.add_mapping_analyses_request)
 
 add Mapping Analysis
 
@@ -19,12 +19,12 @@ add an mapping Analysis with data in the body of the request as json (MappingRes
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # add Mapping Analysis
 #
 # prepare function argument(s)
-var_mapping_output <- MappingOutput$new(MappingQuery$new(MappingInputTable$new(c("ids_example")), 123, "name_example"), "date_example", 123, MappingOutput_entities$new(123, 123, 123, 123, 123, 123, 123), StatisticsMapping$new(123, 123, 123, 123, 123, 123, 123, 123, 123, 123, 123, 123, 123, 123, 123, 123, c(key = Enrichment$new("label_example", 123, 123, 123, 123, 123, 123, 123, 123, 123, 123)))) # MappingOutput |  (Optional)
+var_add_mapping_analyses_request <- addMappingAnalyses_request$new("name_example", MappingOutput$new(MappingQuery$new(MappingInputTable$new(c("ids_example")), 123, "type_example"), "date_example", 123, MappingOutput_entities$new(123, 123, 123, 123, 123, 123, 123), StatisticsMapping$new(123, 123, 123, 123, 123, 123, 123, 123, 123, 123, 123, 123, 123, 123, 123, 123, c(key = Enrichment$new("label_example", 123, 123, 123, 123, 123, 123, 123, 123, 123, 123))))) # AddMappingAnalysesRequest |  (Optional)
 
 api_instance <- MappingAnalysesApi$new()
 # Configure HTTP bearer authorization: userAuth
@@ -32,8 +32,8 @@ api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # Configure API key authorization: appAuth
 # api_instance$api_client$api_keys["x-app-key"] <- Sys.getenv("API_KEY")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-# result <- api_instance$AddMappingAnalyses(mapping_output = var_mapping_outputdata_file = "result.txt")
-result <- api_instance$AddMappingAnalyses(mapping_output = var_mapping_output)
+# result <- api_instance$AddMappingAnalyses(add_mapping_analyses_request = var_add_mapping_analyses_requestdata_file = "result.txt")
+result <- api_instance$AddMappingAnalyses(add_mapping_analyses_request = var_add_mapping_analyses_request)
 dput(result)
 ```
 
@@ -41,7 +41,7 @@ dput(result)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **mapping_output** | [**MappingOutput**](MappingOutput.md)|  | [optional] 
+ **add_mapping_analyses_request** | [**AddMappingAnalysesRequest**](AddMappingAnalysesRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -73,7 +73,7 @@ delete the mapping Analysis with its id
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # delete Mapping Analysis
 #
@@ -127,7 +127,7 @@ get data from mapping Analysis : if no id specified, all the mapping analyses ; 
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # get mapping Analysis
 #
@@ -181,7 +181,7 @@ update a mapping Analysis with its id, the data to modify is passed in the body 
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # update mapping Analysis
 #

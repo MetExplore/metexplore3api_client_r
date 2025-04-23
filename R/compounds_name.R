@@ -66,7 +66,7 @@ CompoundsName <- R6::R6Class(
     fromJSON = function(input_json) {
       this_object <- jsonlite::fromJSON(input_json)
       if (!is.null(this_object$`queryList`)) {
-        self$`queryList` <- ApiClient$new()$deserializeObj(this_object$`queryList`, "array[character]", loadNamespace("metexplore3api?"))
+        self$`queryList` <- ApiClient$new()$deserializeObj(this_object$`queryList`, "array[character]", loadNamespace("metexplore3api"))
       }
       if (!is.null(this_object$`inputType`)) {
         if (!is.null(this_object$`inputType`) && !(this_object$`inputType` %in% c("name", "hmdb", "pubchem", "chebi", "metlin", "kegg"))) {
@@ -111,7 +111,7 @@ CompoundsName <- R6::R6Class(
     #' @return the instance of CompoundsName
     fromJSONString = function(input_json) {
       this_object <- jsonlite::fromJSON(input_json)
-      self$`queryList` <- ApiClient$new()$deserializeObj(this_object$`queryList`, "array[character]", loadNamespace("metexplore3api?"))
+      self$`queryList` <- ApiClient$new()$deserializeObj(this_object$`queryList`, "array[character]", loadNamespace("metexplore3api"))
       if (!is.null(this_object$`inputType`) && !(this_object$`inputType` %in% c("name", "hmdb", "pubchem", "chebi", "metlin", "kegg"))) {
         stop(paste("Error! \"", this_object$`inputType`, "\" cannot be assigned to `inputType`. Must be \"name\", \"hmdb\", \"pubchem\", \"chebi\", \"metlin\", \"kegg\".", sep = ""))
       }

@@ -10,6 +10,7 @@
 #' @field message Message to describe that it's ok or not character
 #' @field success Indicates if the response is a success or a fail character
 #' @field status Code of the response integer
+#' @field result The id of the job character [optional]
 #' @importFrom R6 R6Class
 #' @importFrom jsonlite fromJSON toJSON
 #' @export
@@ -19,6 +20,7 @@ ImportResponse <- R6::R6Class(
     `message` = NULL,
     `success` = NULL,
     `status` = NULL,
+    `result` = NULL,
 
     #' @description
     #' Initialize a new ImportResponse class.
@@ -26,8 +28,9 @@ ImportResponse <- R6::R6Class(
     #' @param message Message to describe that it's ok or not
     #' @param success Indicates if the response is a success or a fail
     #' @param status Code of the response
+    #' @param result The id of the job
     #' @param ... Other optional arguments.
-    initialize = function(`message`, `success`, `status`, ...) {
+    initialize = function(`message`, `success`, `status`, `result` = NULL, ...) {
       if (!missing(`message`)) {
         if (!(is.character(`message`) && length(`message`) == 1)) {
           stop(paste("Error! Invalid data for `message`. Must be a string:", `message`))
@@ -45,6 +48,12 @@ ImportResponse <- R6::R6Class(
           stop(paste("Error! Invalid data for `status`. Must be an integer:", `status`))
         }
         self$`status` <- `status`
+      }
+      if (!is.null(`result`)) {
+        if (!(is.character(`result`) && length(`result`) == 1)) {
+          stop(paste("Error! Invalid data for `result`. Must be a string:", `result`))
+        }
+        self$`result` <- `result`
       }
     },
 
@@ -66,6 +75,10 @@ ImportResponse <- R6::R6Class(
         ImportResponseObject[["status"]] <-
           self$`status`
       }
+      if (!is.null(self$`result`)) {
+        ImportResponseObject[["result"]] <-
+          self$`result`
+      }
       ImportResponseObject
     },
 
@@ -84,6 +97,9 @@ ImportResponse <- R6::R6Class(
       }
       if (!is.null(this_object$`status`)) {
         self$`status` <- this_object$`status`
+      }
+      if (!is.null(this_object$`result`)) {
+        self$`result` <- this_object$`result`
       }
       self
     },
@@ -117,6 +133,14 @@ ImportResponse <- R6::R6Class(
                     ',
           self$`status`
           )
+        },
+        if (!is.null(self$`result`)) {
+          sprintf(
+          '"result":
+            "%s"
+                    ',
+          self$`result`
+          )
         }
       )
       jsoncontent <- paste(jsoncontent, collapse = ",")
@@ -133,6 +157,7 @@ ImportResponse <- R6::R6Class(
       self$`message` <- this_object$`message`
       self$`success` <- this_object$`success`
       self$`status` <- this_object$`status`
+      self$`result` <- this_object$`result`
       self
     },
 

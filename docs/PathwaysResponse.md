@@ -1,4 +1,4 @@
-# metexplore3api?::PathwaysResponse
+# metexplore3api::PathwaysResponse
 
 
 ## Properties

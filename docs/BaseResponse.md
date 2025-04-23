@@ -1,4 +1,4 @@
-# metexplore3api?::BaseResponse
+# metexplore3api::BaseResponse
 
 
 ## Properties

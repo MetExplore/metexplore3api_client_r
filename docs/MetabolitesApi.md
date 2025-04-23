@@ -20,7 +20,7 @@ get the number of metabolites in a network
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # get the number of metabolites in a network
 #
@@ -70,7 +70,7 @@ delete for Metabolite
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # del Metabolite
 #
@@ -124,7 +124,7 @@ get from Metabolite
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # get Metabolite
 #
@@ -178,7 +178,7 @@ add for Metabolite
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # add Metabolite
 #
@@ -232,7 +232,7 @@ update for Metabolite
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # update Metabolite
 #

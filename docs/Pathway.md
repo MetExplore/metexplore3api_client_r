@@ -1,4 +1,4 @@
-# metexplore3api?::Pathway
+# metexplore3api::Pathway
 
 Pathway object
 

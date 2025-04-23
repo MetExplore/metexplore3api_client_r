@@ -1,4 +1,4 @@
-# metexplore3api?::NetworkResponse
+# metexplore3api::NetworkResponse
 
 
 ## Properties

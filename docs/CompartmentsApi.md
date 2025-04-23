@@ -20,7 +20,7 @@ count number of compartments in a network
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # count number of compartments in a network
 #
@@ -70,7 +70,7 @@ Delete a Compartment from a Network
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # Delete a Compartment from a Network
 #
@@ -123,7 +123,7 @@ get compartments in a network
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # get compartments in a network
 #
@@ -172,7 +172,7 @@ add a compartment in a Network
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # add a compartment in a Network
 #
@@ -226,7 +226,7 @@ update a compartment
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # update a compartment
 #

@@ -8,15 +8,18 @@
 #' @description Reaction Class
 #' @format An \code{R6Class} generator object
 #' @field id database id integer [optional]
-#' @field name name for Reaction character [optional]
+#' @field name name character [optional]
 #' @field db_identifier unique identifier character [optional]
 #' @field id_collection id of the collection integer [optional]
-#' @field spontaneous spontaneous for Reaction character [optional]
-#' @field generic generic for Reaction character [optional]
+#' @field spontaneous spontaneous for Reaction (0 : false, 1 : true) numeric [optional]
+#' @field generic generic for Reaction (0 : false, 1 : true) numeric [optional]
 #' @field type type for Reaction character [optional]
 #' @field ec ec for Reaction character [optional]
 #' @field id_last_annotator id_last_annotator for Reaction integer [optional]
-#' @field date_modification date_modification for Reaction character [optional]
+#' @field date_modification date_modification for Reaction object [optional]
+#' @field reversible reversible for Reaction (0 : false, 1 : true) numeric [optional]
+#' @field eq_identifier Equation with identifiers character [optional]
+#' @field eq_name Equation with names character [optional]
 #' @importFrom R6 R6Class
 #' @importFrom jsonlite fromJSON toJSON
 #' @export
@@ -33,22 +36,28 @@ Reaction <- R6::R6Class(
     `ec` = NULL,
     `id_last_annotator` = NULL,
     `date_modification` = NULL,
+    `reversible` = NULL,
+    `eq_identifier` = NULL,
+    `eq_name` = NULL,
 
     #' @description
     #' Initialize a new Reaction class.
     #'
     #' @param id database id
-    #' @param name name for Reaction
+    #' @param name name
     #' @param db_identifier unique identifier
     #' @param id_collection id of the collection
-    #' @param spontaneous spontaneous for Reaction
-    #' @param generic generic for Reaction
+    #' @param spontaneous spontaneous for Reaction (0 : false, 1 : true)
+    #' @param generic generic for Reaction (0 : false, 1 : true)
     #' @param type type for Reaction
     #' @param ec ec for Reaction
     #' @param id_last_annotator id_last_annotator for Reaction
     #' @param date_modification date_modification for Reaction
+    #' @param reversible reversible for Reaction (0 : false, 1 : true)
+    #' @param eq_identifier Equation with identifiers
+    #' @param eq_name Equation with names
     #' @param ... Other optional arguments.
-    initialize = function(`id` = NULL, `name` = NULL, `db_identifier` = NULL, `id_collection` = NULL, `spontaneous` = NULL, `generic` = NULL, `type` = NULL, `ec` = NULL, `id_last_annotator` = NULL, `date_modification` = NULL, ...) {
+    initialize = function(`id` = NULL, `name` = NULL, `db_identifier` = NULL, `id_collection` = NULL, `spontaneous` = NULL, `generic` = NULL, `type` = NULL, `ec` = NULL, `id_last_annotator` = NULL, `date_modification` = NULL, `reversible` = NULL, `eq_identifier` = NULL, `eq_name` = NULL, ...) {
       if (!is.null(`id`)) {
         if (!(is.numeric(`id`) && length(`id`) == 1)) {
           stop(paste("Error! Invalid data for `id`. Must be an integer:", `id`))
@@ -74,15 +83,9 @@ Reaction <- R6::R6Class(
         self$`id_collection` <- `id_collection`
       }
       if (!is.null(`spontaneous`)) {
-        if (!(is.logical(`spontaneous`) && length(`spontaneous`) == 1)) {
-          stop(paste("Error! Invalid data for `spontaneous`. Must be a boolean:", `spontaneous`))
-        }
         self$`spontaneous` <- `spontaneous`
       }
       if (!is.null(`generic`)) {
-        if (!(is.logical(`generic`) && length(`generic`) == 1)) {
-          stop(paste("Error! Invalid data for `generic`. Must be a boolean:", `generic`))
-        }
         self$`generic` <- `generic`
       }
       if (!is.null(`type`)) {
@@ -104,10 +107,22 @@ Reaction <- R6::R6Class(
         self$`id_last_annotator` <- `id_last_annotator`
       }
       if (!is.null(`date_modification`)) {
-        if (!(is.character(`date_modification`) && length(`date_modification`) == 1)) {
-          stop(paste("Error! Invalid data for `date_modification`. Must be a string:", `date_modification`))
-        }
         self$`date_modification` <- `date_modification`
+      }
+      if (!is.null(`reversible`)) {
+        self$`reversible` <- `reversible`
+      }
+      if (!is.null(`eq_identifier`)) {
+        if (!(is.character(`eq_identifier`) && length(`eq_identifier`) == 1)) {
+          stop(paste("Error! Invalid data for `eq_identifier`. Must be a string:", `eq_identifier`))
+        }
+        self$`eq_identifier` <- `eq_identifier`
+      }
+      if (!is.null(`eq_name`)) {
+        if (!(is.character(`eq_name`) && length(`eq_name`) == 1)) {
+          stop(paste("Error! Invalid data for `eq_name`. Must be a string:", `eq_name`))
+        }
+        self$`eq_name` <- `eq_name`
       }
     },
 
@@ -157,6 +172,18 @@ Reaction <- R6::R6Class(
         ReactionObject[["date_modification"]] <-
           self$`date_modification`
       }
+      if (!is.null(self$`reversible`)) {
+        ReactionObject[["reversible"]] <-
+          self$`reversible`
+      }
+      if (!is.null(self$`eq_identifier`)) {
+        ReactionObject[["eq_identifier"]] <-
+          self$`eq_identifier`
+      }
+      if (!is.null(self$`eq_name`)) {
+        ReactionObject[["eq_name"]] <-
+          self$`eq_name`
+      }
       ReactionObject
     },
 
@@ -196,6 +223,15 @@ Reaction <- R6::R6Class(
       }
       if (!is.null(this_object$`date_modification`)) {
         self$`date_modification` <- this_object$`date_modification`
+      }
+      if (!is.null(this_object$`reversible`)) {
+        self$`reversible` <- this_object$`reversible`
+      }
+      if (!is.null(this_object$`eq_identifier`)) {
+        self$`eq_identifier` <- this_object$`eq_identifier`
+      }
+      if (!is.null(this_object$`eq_name`)) {
+        self$`eq_name` <- this_object$`eq_name`
       }
       self
     },
@@ -241,17 +277,17 @@ Reaction <- R6::R6Class(
         if (!is.null(self$`spontaneous`)) {
           sprintf(
           '"spontaneous":
-            %s
+            %d
                     ',
-          tolower(self$`spontaneous`)
+          self$`spontaneous`
           )
         },
         if (!is.null(self$`generic`)) {
           sprintf(
           '"generic":
-            %s
+            %d
                     ',
-          tolower(self$`generic`)
+          self$`generic`
           )
         },
         if (!is.null(self$`type`)) {
@@ -285,6 +321,30 @@ Reaction <- R6::R6Class(
                     ',
           self$`date_modification`
           )
+        },
+        if (!is.null(self$`reversible`)) {
+          sprintf(
+          '"reversible":
+            %d
+                    ',
+          self$`reversible`
+          )
+        },
+        if (!is.null(self$`eq_identifier`)) {
+          sprintf(
+          '"eq_identifier":
+            "%s"
+                    ',
+          self$`eq_identifier`
+          )
+        },
+        if (!is.null(self$`eq_name`)) {
+          sprintf(
+          '"eq_name":
+            "%s"
+                    ',
+          self$`eq_name`
+          )
         }
       )
       jsoncontent <- paste(jsoncontent, collapse = ",")
@@ -308,6 +368,9 @@ Reaction <- R6::R6Class(
       self$`ec` <- this_object$`ec`
       self$`id_last_annotator` <- this_object$`id_last_annotator`
       self$`date_modification` <- this_object$`date_modification`
+      self$`reversible` <- this_object$`reversible`
+      self$`eq_identifier` <- this_object$`eq_identifier`
+      self$`eq_name` <- this_object$`eq_name`
       self
     },
 
@@ -332,10 +395,6 @@ Reaction <- R6::R6Class(
     #'
     #' @return true if the values in all fields are valid.
     isValid = function() {
-      if (!str_detect(self$`date_modification`, "^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2}$")) {
-        return(FALSE)
-      }
-
       TRUE
     },
 
@@ -345,10 +404,6 @@ Reaction <- R6::R6Class(
     #' @return A list of invalid fields (if any).
     getInvalidFields = function() {
       invalid_fields <- list()
-      if (!str_detect(self$`date_modification`, "^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2}$")) {
-        invalid_fields["date_modification"] <- "Invalid value for `date_modification`, must conform to the pattern ^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2}$."
-      }
-
       invalid_fields
     },
 

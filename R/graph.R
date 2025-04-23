@@ -122,13 +122,13 @@ Graph <- R6::R6Class(
         self$`label` <- this_object$`label`
       }
       if (!is.null(this_object$`metadata`)) {
-        self$`metadata` <- ApiClient$new()$deserializeObj(this_object$`metadata`, "map(AnyType)", loadNamespace("metexplore3api?"))
+        self$`metadata` <- ApiClient$new()$deserializeObj(this_object$`metadata`, "map(AnyType)", loadNamespace("metexplore3api"))
       }
       if (!is.null(this_object$`nodes`)) {
-        self$`nodes` <- ApiClient$new()$deserializeObj(this_object$`nodes`, "map(Node)", loadNamespace("metexplore3api?"))
+        self$`nodes` <- ApiClient$new()$deserializeObj(this_object$`nodes`, "map(Node)", loadNamespace("metexplore3api"))
       }
       if (!is.null(this_object$`edges`)) {
-        self$`edges` <- ApiClient$new()$deserializeObj(this_object$`edges`, "array[Edge]", loadNamespace("metexplore3api?"))
+        self$`edges` <- ApiClient$new()$deserializeObj(this_object$`edges`, "array[Edge]", loadNamespace("metexplore3api"))
       }
       self
     },
@@ -202,9 +202,9 @@ Graph <- R6::R6Class(
       self$`directed` <- this_object$`directed`
       self$`type` <- this_object$`type`
       self$`label` <- this_object$`label`
-      self$`metadata` <- ApiClient$new()$deserializeObj(this_object$`metadata`, "map(AnyType)", loadNamespace("metexplore3api?"))
-      self$`nodes` <- ApiClient$new()$deserializeObj(this_object$`nodes`, "map(Node)", loadNamespace("metexplore3api?"))
-      self$`edges` <- ApiClient$new()$deserializeObj(this_object$`edges`, "array[Edge]", loadNamespace("metexplore3api?"))
+      self$`metadata` <- ApiClient$new()$deserializeObj(this_object$`metadata`, "map(AnyType)", loadNamespace("metexplore3api"))
+      self$`nodes` <- ApiClient$new()$deserializeObj(this_object$`nodes`, "map(Node)", loadNamespace("metexplore3api"))
+      self$`edges` <- ApiClient$new()$deserializeObj(this_object$`edges`, "array[Edge]", loadNamespace("metexplore3api"))
       self
     },
 

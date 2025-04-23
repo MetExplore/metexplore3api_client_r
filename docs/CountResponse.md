@@ -1,4 +1,4 @@
-# metexplore3api?::CountResponse
+# metexplore3api::CountResponse
 
 
 ## Properties

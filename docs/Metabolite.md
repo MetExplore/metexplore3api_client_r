@@ -1,4 +1,4 @@
-# metexplore3api?::Metabolite
+# metexplore3api::Metabolite
 
 Metabolite object
 

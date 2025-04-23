@@ -98,7 +98,7 @@ StepResponse <- R6::R6Class(
         self$`status` <- this_object$`status`
       }
       if (!is.null(this_object$`steps`)) {
-        self$`steps` <- ApiClient$new()$deserializeObj(this_object$`steps`, "array[Step]", loadNamespace("metexplore3api?"))
+        self$`steps` <- ApiClient$new()$deserializeObj(this_object$`steps`, "array[Step]", loadNamespace("metexplore3api"))
       }
       self
     },
@@ -156,7 +156,7 @@ StepResponse <- R6::R6Class(
       self$`message` <- this_object$`message`
       self$`success` <- this_object$`success`
       self$`status` <- this_object$`status`
-      self$`steps` <- ApiClient$new()$deserializeObj(this_object$`steps`, "array[Step]", loadNamespace("metexplore3api?"))
+      self$`steps` <- ApiClient$new()$deserializeObj(this_object$`steps`, "array[Step]", loadNamespace("metexplore3api"))
       self
     },
 

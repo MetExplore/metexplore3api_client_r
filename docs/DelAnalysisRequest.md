@@ -1,4 +1,4 @@
-# metexplore3api?::DelAnalysisRequest
+# metexplore3api::DelAnalysisRequest
 
 Object containing the id
 

@@ -8,13 +8,13 @@
 #' @description Enrichment Class
 #' @format An \code{R6Class} generator object
 #' @field label label of the pathway character
-#' @field nb_total_metabolites total number of metabolites integer
-#' @field nb_mapped_metabolites number of mapped metabolites integer
+#' @field nb_total_biodata total number of the mapped biodata (metabolites, genes, ...) integer
+#' @field nb_mapped_biodata number of mapped biodata (metabolites, genes, ...) integer
 #' @field nb_total_reactions total number of reactions integer
 #' @field nb_mapped_reactions number of mapped reactions integer
-#' @field pval_metabolites result of the right-tailed fisher test for metabolites numeric
-#' @field bonferroni_pval_metabolites bonferroni correction of the p-value for metabolites numeric
-#' @field bh_pval_metabolites Benjamini-Hochberg correction of the p-value for metabolites numeric
+#' @field pval result of the right-tailed fisher test for the pathway numeric
+#' @field bonferroni_pval bonferroni correction of the p-value for the pathway numeric
+#' @field bh_pval Benjamini-Hochberg correction of the p-value for the pathway numeric
 #' @field pval_reactions result of the right-tailed fisher test for reactions numeric
 #' @field bonferroni_pval_reactions bonferroni correction of the p-value for reactions numeric
 #' @field bh_pval_reactions Benjamini-Hochberg correction of the p-value for reactions numeric
@@ -25,13 +25,13 @@ Enrichment <- R6::R6Class(
   "Enrichment",
   public = list(
     `label` = NULL,
-    `nb_total_metabolites` = NULL,
-    `nb_mapped_metabolites` = NULL,
+    `nb_total_biodata` = NULL,
+    `nb_mapped_biodata` = NULL,
     `nb_total_reactions` = NULL,
     `nb_mapped_reactions` = NULL,
-    `pval_metabolites` = NULL,
-    `bonferroni_pval_metabolites` = NULL,
-    `bh_pval_metabolites` = NULL,
+    `pval` = NULL,
+    `bonferroni_pval` = NULL,
+    `bh_pval` = NULL,
     `pval_reactions` = NULL,
     `bonferroni_pval_reactions` = NULL,
     `bh_pval_reactions` = NULL,
@@ -40,35 +40,35 @@ Enrichment <- R6::R6Class(
     #' Initialize a new Enrichment class.
     #'
     #' @param label label of the pathway
-    #' @param nb_total_metabolites total number of metabolites
-    #' @param nb_mapped_metabolites number of mapped metabolites
+    #' @param nb_total_biodata total number of the mapped biodata (metabolites, genes, ...)
+    #' @param nb_mapped_biodata number of mapped biodata (metabolites, genes, ...)
     #' @param nb_total_reactions total number of reactions
     #' @param nb_mapped_reactions number of mapped reactions
-    #' @param pval_metabolites result of the right-tailed fisher test for metabolites
-    #' @param bonferroni_pval_metabolites bonferroni correction of the p-value for metabolites
-    #' @param bh_pval_metabolites Benjamini-Hochberg correction of the p-value for metabolites
+    #' @param pval result of the right-tailed fisher test for the pathway
+    #' @param bonferroni_pval bonferroni correction of the p-value for the pathway
+    #' @param bh_pval Benjamini-Hochberg correction of the p-value for the pathway
     #' @param pval_reactions result of the right-tailed fisher test for reactions
     #' @param bonferroni_pval_reactions bonferroni correction of the p-value for reactions
     #' @param bh_pval_reactions Benjamini-Hochberg correction of the p-value for reactions
     #' @param ... Other optional arguments.
-    initialize = function(`label`, `nb_total_metabolites`, `nb_mapped_metabolites`, `nb_total_reactions`, `nb_mapped_reactions`, `pval_metabolites`, `bonferroni_pval_metabolites`, `bh_pval_metabolites`, `pval_reactions`, `bonferroni_pval_reactions`, `bh_pval_reactions`, ...) {
+    initialize = function(`label`, `nb_total_biodata`, `nb_mapped_biodata`, `nb_total_reactions`, `nb_mapped_reactions`, `pval`, `bonferroni_pval`, `bh_pval`, `pval_reactions`, `bonferroni_pval_reactions`, `bh_pval_reactions`, ...) {
       if (!missing(`label`)) {
         if (!(is.character(`label`) && length(`label`) == 1)) {
           stop(paste("Error! Invalid data for `label`. Must be a string:", `label`))
         }
         self$`label` <- `label`
       }
-      if (!missing(`nb_total_metabolites`)) {
-        if (!(is.numeric(`nb_total_metabolites`) && length(`nb_total_metabolites`) == 1)) {
-          stop(paste("Error! Invalid data for `nb_total_metabolites`. Must be an integer:", `nb_total_metabolites`))
+      if (!missing(`nb_total_biodata`)) {
+        if (!(is.numeric(`nb_total_biodata`) && length(`nb_total_biodata`) == 1)) {
+          stop(paste("Error! Invalid data for `nb_total_biodata`. Must be an integer:", `nb_total_biodata`))
         }
-        self$`nb_total_metabolites` <- `nb_total_metabolites`
+        self$`nb_total_biodata` <- `nb_total_biodata`
       }
-      if (!missing(`nb_mapped_metabolites`)) {
-        if (!(is.numeric(`nb_mapped_metabolites`) && length(`nb_mapped_metabolites`) == 1)) {
-          stop(paste("Error! Invalid data for `nb_mapped_metabolites`. Must be an integer:", `nb_mapped_metabolites`))
+      if (!missing(`nb_mapped_biodata`)) {
+        if (!(is.numeric(`nb_mapped_biodata`) && length(`nb_mapped_biodata`) == 1)) {
+          stop(paste("Error! Invalid data for `nb_mapped_biodata`. Must be an integer:", `nb_mapped_biodata`))
         }
-        self$`nb_mapped_metabolites` <- `nb_mapped_metabolites`
+        self$`nb_mapped_biodata` <- `nb_mapped_biodata`
       }
       if (!missing(`nb_total_reactions`)) {
         if (!(is.numeric(`nb_total_reactions`) && length(`nb_total_reactions`) == 1)) {
@@ -82,14 +82,14 @@ Enrichment <- R6::R6Class(
         }
         self$`nb_mapped_reactions` <- `nb_mapped_reactions`
       }
-      if (!missing(`pval_metabolites`)) {
-        self$`pval_metabolites` <- `pval_metabolites`
+      if (!missing(`pval`)) {
+        self$`pval` <- `pval`
       }
-      if (!missing(`bonferroni_pval_metabolites`)) {
-        self$`bonferroni_pval_metabolites` <- `bonferroni_pval_metabolites`
+      if (!missing(`bonferroni_pval`)) {
+        self$`bonferroni_pval` <- `bonferroni_pval`
       }
-      if (!missing(`bh_pval_metabolites`)) {
-        self$`bh_pval_metabolites` <- `bh_pval_metabolites`
+      if (!missing(`bh_pval`)) {
+        self$`bh_pval` <- `bh_pval`
       }
       if (!missing(`pval_reactions`)) {
         self$`pval_reactions` <- `pval_reactions`
@@ -112,13 +112,13 @@ Enrichment <- R6::R6Class(
         EnrichmentObject[["label"]] <-
           self$`label`
       }
-      if (!is.null(self$`nb_total_metabolites`)) {
-        EnrichmentObject[["nb_total_metabolites"]] <-
-          self$`nb_total_metabolites`
+      if (!is.null(self$`nb_total_biodata`)) {
+        EnrichmentObject[["nb_total_biodata"]] <-
+          self$`nb_total_biodata`
       }
-      if (!is.null(self$`nb_mapped_metabolites`)) {
-        EnrichmentObject[["nb_mapped_metabolites"]] <-
-          self$`nb_mapped_metabolites`
+      if (!is.null(self$`nb_mapped_biodata`)) {
+        EnrichmentObject[["nb_mapped_biodata"]] <-
+          self$`nb_mapped_biodata`
       }
       if (!is.null(self$`nb_total_reactions`)) {
         EnrichmentObject[["nb_total_reactions"]] <-
@@ -128,17 +128,17 @@ Enrichment <- R6::R6Class(
         EnrichmentObject[["nb_mapped_reactions"]] <-
           self$`nb_mapped_reactions`
       }
-      if (!is.null(self$`pval_metabolites`)) {
-        EnrichmentObject[["pval_metabolites"]] <-
-          self$`pval_metabolites`
+      if (!is.null(self$`pval`)) {
+        EnrichmentObject[["pval"]] <-
+          self$`pval`
       }
-      if (!is.null(self$`bonferroni_pval_metabolites`)) {
-        EnrichmentObject[["bonferroni_pval_metabolites"]] <-
-          self$`bonferroni_pval_metabolites`
+      if (!is.null(self$`bonferroni_pval`)) {
+        EnrichmentObject[["bonferroni_pval"]] <-
+          self$`bonferroni_pval`
       }
-      if (!is.null(self$`bh_pval_metabolites`)) {
-        EnrichmentObject[["bh_pval_metabolites"]] <-
-          self$`bh_pval_metabolites`
+      if (!is.null(self$`bh_pval`)) {
+        EnrichmentObject[["bh_pval"]] <-
+          self$`bh_pval`
       }
       if (!is.null(self$`pval_reactions`)) {
         EnrichmentObject[["pval_reactions"]] <-
@@ -165,11 +165,11 @@ Enrichment <- R6::R6Class(
       if (!is.null(this_object$`label`)) {
         self$`label` <- this_object$`label`
       }
-      if (!is.null(this_object$`nb_total_metabolites`)) {
-        self$`nb_total_metabolites` <- this_object$`nb_total_metabolites`
+      if (!is.null(this_object$`nb_total_biodata`)) {
+        self$`nb_total_biodata` <- this_object$`nb_total_biodata`
       }
-      if (!is.null(this_object$`nb_mapped_metabolites`)) {
-        self$`nb_mapped_metabolites` <- this_object$`nb_mapped_metabolites`
+      if (!is.null(this_object$`nb_mapped_biodata`)) {
+        self$`nb_mapped_biodata` <- this_object$`nb_mapped_biodata`
       }
       if (!is.null(this_object$`nb_total_reactions`)) {
         self$`nb_total_reactions` <- this_object$`nb_total_reactions`
@@ -177,14 +177,14 @@ Enrichment <- R6::R6Class(
       if (!is.null(this_object$`nb_mapped_reactions`)) {
         self$`nb_mapped_reactions` <- this_object$`nb_mapped_reactions`
       }
-      if (!is.null(this_object$`pval_metabolites`)) {
-        self$`pval_metabolites` <- this_object$`pval_metabolites`
+      if (!is.null(this_object$`pval`)) {
+        self$`pval` <- this_object$`pval`
       }
-      if (!is.null(this_object$`bonferroni_pval_metabolites`)) {
-        self$`bonferroni_pval_metabolites` <- this_object$`bonferroni_pval_metabolites`
+      if (!is.null(this_object$`bonferroni_pval`)) {
+        self$`bonferroni_pval` <- this_object$`bonferroni_pval`
       }
-      if (!is.null(this_object$`bh_pval_metabolites`)) {
-        self$`bh_pval_metabolites` <- this_object$`bh_pval_metabolites`
+      if (!is.null(this_object$`bh_pval`)) {
+        self$`bh_pval` <- this_object$`bh_pval`
       }
       if (!is.null(this_object$`pval_reactions`)) {
         self$`pval_reactions` <- this_object$`pval_reactions`
@@ -212,20 +212,20 @@ Enrichment <- R6::R6Class(
           self$`label`
           )
         },
-        if (!is.null(self$`nb_total_metabolites`)) {
+        if (!is.null(self$`nb_total_biodata`)) {
           sprintf(
-          '"nb_total_metabolites":
+          '"nb_total_biodata":
             %d
                     ',
-          self$`nb_total_metabolites`
+          self$`nb_total_biodata`
           )
         },
-        if (!is.null(self$`nb_mapped_metabolites`)) {
+        if (!is.null(self$`nb_mapped_biodata`)) {
           sprintf(
-          '"nb_mapped_metabolites":
+          '"nb_mapped_biodata":
             %d
                     ',
-          self$`nb_mapped_metabolites`
+          self$`nb_mapped_biodata`
           )
         },
         if (!is.null(self$`nb_total_reactions`)) {
@@ -244,28 +244,28 @@ Enrichment <- R6::R6Class(
           self$`nb_mapped_reactions`
           )
         },
-        if (!is.null(self$`pval_metabolites`)) {
+        if (!is.null(self$`pval`)) {
           sprintf(
-          '"pval_metabolites":
+          '"pval":
             %d
                     ',
-          self$`pval_metabolites`
+          self$`pval`
           )
         },
-        if (!is.null(self$`bonferroni_pval_metabolites`)) {
+        if (!is.null(self$`bonferroni_pval`)) {
           sprintf(
-          '"bonferroni_pval_metabolites":
+          '"bonferroni_pval":
             %d
                     ',
-          self$`bonferroni_pval_metabolites`
+          self$`bonferroni_pval`
           )
         },
-        if (!is.null(self$`bh_pval_metabolites`)) {
+        if (!is.null(self$`bh_pval`)) {
           sprintf(
-          '"bh_pval_metabolites":
+          '"bh_pval":
             %d
                     ',
-          self$`bh_pval_metabolites`
+          self$`bh_pval`
           )
         },
         if (!is.null(self$`pval_reactions`)) {
@@ -305,13 +305,13 @@ Enrichment <- R6::R6Class(
     fromJSONString = function(input_json) {
       this_object <- jsonlite::fromJSON(input_json)
       self$`label` <- this_object$`label`
-      self$`nb_total_metabolites` <- this_object$`nb_total_metabolites`
-      self$`nb_mapped_metabolites` <- this_object$`nb_mapped_metabolites`
+      self$`nb_total_biodata` <- this_object$`nb_total_biodata`
+      self$`nb_mapped_biodata` <- this_object$`nb_mapped_biodata`
       self$`nb_total_reactions` <- this_object$`nb_total_reactions`
       self$`nb_mapped_reactions` <- this_object$`nb_mapped_reactions`
-      self$`pval_metabolites` <- this_object$`pval_metabolites`
-      self$`bonferroni_pval_metabolites` <- this_object$`bonferroni_pval_metabolites`
-      self$`bh_pval_metabolites` <- this_object$`bh_pval_metabolites`
+      self$`pval` <- this_object$`pval`
+      self$`bonferroni_pval` <- this_object$`bonferroni_pval`
+      self$`bh_pval` <- this_object$`bh_pval`
       self$`pval_reactions` <- this_object$`pval_reactions`
       self$`bonferroni_pval_reactions` <- this_object$`bonferroni_pval_reactions`
       self$`bh_pval_reactions` <- this_object$`bh_pval_reactions`
@@ -332,21 +332,21 @@ Enrichment <- R6::R6Class(
       } else {
         stop(paste("The JSON input `", input, "` is invalid for Enrichment: the required field `label` is missing."))
       }
-      # check the required field `nb_total_metabolites`
-      if (!is.null(input_json$`nb_total_metabolites`)) {
-        if (!(is.numeric(input_json$`nb_total_metabolites`) && length(input_json$`nb_total_metabolites`) == 1)) {
-          stop(paste("Error! Invalid data for `nb_total_metabolites`. Must be an integer:", input_json$`nb_total_metabolites`))
+      # check the required field `nb_total_biodata`
+      if (!is.null(input_json$`nb_total_biodata`)) {
+        if (!(is.numeric(input_json$`nb_total_biodata`) && length(input_json$`nb_total_biodata`) == 1)) {
+          stop(paste("Error! Invalid data for `nb_total_biodata`. Must be an integer:", input_json$`nb_total_biodata`))
         }
       } else {
-        stop(paste("The JSON input `", input, "` is invalid for Enrichment: the required field `nb_total_metabolites` is missing."))
+        stop(paste("The JSON input `", input, "` is invalid for Enrichment: the required field `nb_total_biodata` is missing."))
       }
-      # check the required field `nb_mapped_metabolites`
-      if (!is.null(input_json$`nb_mapped_metabolites`)) {
-        if (!(is.numeric(input_json$`nb_mapped_metabolites`) && length(input_json$`nb_mapped_metabolites`) == 1)) {
-          stop(paste("Error! Invalid data for `nb_mapped_metabolites`. Must be an integer:", input_json$`nb_mapped_metabolites`))
+      # check the required field `nb_mapped_biodata`
+      if (!is.null(input_json$`nb_mapped_biodata`)) {
+        if (!(is.numeric(input_json$`nb_mapped_biodata`) && length(input_json$`nb_mapped_biodata`) == 1)) {
+          stop(paste("Error! Invalid data for `nb_mapped_biodata`. Must be an integer:", input_json$`nb_mapped_biodata`))
         }
       } else {
-        stop(paste("The JSON input `", input, "` is invalid for Enrichment: the required field `nb_mapped_metabolites` is missing."))
+        stop(paste("The JSON input `", input, "` is invalid for Enrichment: the required field `nb_mapped_biodata` is missing."))
       }
       # check the required field `nb_total_reactions`
       if (!is.null(input_json$`nb_total_reactions`)) {
@@ -364,20 +364,20 @@ Enrichment <- R6::R6Class(
       } else {
         stop(paste("The JSON input `", input, "` is invalid for Enrichment: the required field `nb_mapped_reactions` is missing."))
       }
-      # check the required field `pval_metabolites`
-      if (!is.null(input_json$`pval_metabolites`)) {
+      # check the required field `pval`
+      if (!is.null(input_json$`pval`)) {
       } else {
-        stop(paste("The JSON input `", input, "` is invalid for Enrichment: the required field `pval_metabolites` is missing."))
+        stop(paste("The JSON input `", input, "` is invalid for Enrichment: the required field `pval` is missing."))
       }
-      # check the required field `bonferroni_pval_metabolites`
-      if (!is.null(input_json$`bonferroni_pval_metabolites`)) {
+      # check the required field `bonferroni_pval`
+      if (!is.null(input_json$`bonferroni_pval`)) {
       } else {
-        stop(paste("The JSON input `", input, "` is invalid for Enrichment: the required field `bonferroni_pval_metabolites` is missing."))
+        stop(paste("The JSON input `", input, "` is invalid for Enrichment: the required field `bonferroni_pval` is missing."))
       }
-      # check the required field `bh_pval_metabolites`
-      if (!is.null(input_json$`bh_pval_metabolites`)) {
+      # check the required field `bh_pval`
+      if (!is.null(input_json$`bh_pval`)) {
       } else {
-        stop(paste("The JSON input `", input, "` is invalid for Enrichment: the required field `bh_pval_metabolites` is missing."))
+        stop(paste("The JSON input `", input, "` is invalid for Enrichment: the required field `bh_pval` is missing."))
       }
       # check the required field `pval_reactions`
       if (!is.null(input_json$`pval_reactions`)) {
@@ -414,13 +414,13 @@ Enrichment <- R6::R6Class(
         return(FALSE)
       }
 
-      # check if the required `nb_total_metabolites` is null
-      if (is.null(self$`nb_total_metabolites`)) {
+      # check if the required `nb_total_biodata` is null
+      if (is.null(self$`nb_total_biodata`)) {
         return(FALSE)
       }
 
-      # check if the required `nb_mapped_metabolites` is null
-      if (is.null(self$`nb_mapped_metabolites`)) {
+      # check if the required `nb_mapped_biodata` is null
+      if (is.null(self$`nb_mapped_biodata`)) {
         return(FALSE)
       }
 
@@ -434,18 +434,18 @@ Enrichment <- R6::R6Class(
         return(FALSE)
       }
 
-      # check if the required `pval_metabolites` is null
-      if (is.null(self$`pval_metabolites`)) {
+      # check if the required `pval` is null
+      if (is.null(self$`pval`)) {
         return(FALSE)
       }
 
-      # check if the required `bonferroni_pval_metabolites` is null
-      if (is.null(self$`bonferroni_pval_metabolites`)) {
+      # check if the required `bonferroni_pval` is null
+      if (is.null(self$`bonferroni_pval`)) {
         return(FALSE)
       }
 
-      # check if the required `bh_pval_metabolites` is null
-      if (is.null(self$`bh_pval_metabolites`)) {
+      # check if the required `bh_pval` is null
+      if (is.null(self$`bh_pval`)) {
         return(FALSE)
       }
 
@@ -478,14 +478,14 @@ Enrichment <- R6::R6Class(
         invalid_fields["label"] <- "Non-nullable required field `label` cannot be null."
       }
 
-      # check if the required `nb_total_metabolites` is null
-      if (is.null(self$`nb_total_metabolites`)) {
-        invalid_fields["nb_total_metabolites"] <- "Non-nullable required field `nb_total_metabolites` cannot be null."
+      # check if the required `nb_total_biodata` is null
+      if (is.null(self$`nb_total_biodata`)) {
+        invalid_fields["nb_total_biodata"] <- "Non-nullable required field `nb_total_biodata` cannot be null."
       }
 
-      # check if the required `nb_mapped_metabolites` is null
-      if (is.null(self$`nb_mapped_metabolites`)) {
-        invalid_fields["nb_mapped_metabolites"] <- "Non-nullable required field `nb_mapped_metabolites` cannot be null."
+      # check if the required `nb_mapped_biodata` is null
+      if (is.null(self$`nb_mapped_biodata`)) {
+        invalid_fields["nb_mapped_biodata"] <- "Non-nullable required field `nb_mapped_biodata` cannot be null."
       }
 
       # check if the required `nb_total_reactions` is null
@@ -498,19 +498,19 @@ Enrichment <- R6::R6Class(
         invalid_fields["nb_mapped_reactions"] <- "Non-nullable required field `nb_mapped_reactions` cannot be null."
       }
 
-      # check if the required `pval_metabolites` is null
-      if (is.null(self$`pval_metabolites`)) {
-        invalid_fields["pval_metabolites"] <- "Non-nullable required field `pval_metabolites` cannot be null."
+      # check if the required `pval` is null
+      if (is.null(self$`pval`)) {
+        invalid_fields["pval"] <- "Non-nullable required field `pval` cannot be null."
       }
 
-      # check if the required `bonferroni_pval_metabolites` is null
-      if (is.null(self$`bonferroni_pval_metabolites`)) {
-        invalid_fields["bonferroni_pval_metabolites"] <- "Non-nullable required field `bonferroni_pval_metabolites` cannot be null."
+      # check if the required `bonferroni_pval` is null
+      if (is.null(self$`bonferroni_pval`)) {
+        invalid_fields["bonferroni_pval"] <- "Non-nullable required field `bonferroni_pval` cannot be null."
       }
 
-      # check if the required `bh_pval_metabolites` is null
-      if (is.null(self$`bh_pval_metabolites`)) {
-        invalid_fields["bh_pval_metabolites"] <- "Non-nullable required field `bh_pval_metabolites` cannot be null."
+      # check if the required `bh_pval` is null
+      if (is.null(self$`bh_pval`)) {
+        invalid_fields["bh_pval"] <- "Non-nullable required field `bh_pval` cannot be null."
       }
 
       # check if the required `pval_reactions` is null

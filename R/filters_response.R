@@ -122,13 +122,13 @@ FiltersResponse <- R6::R6Class(
         self$`status` <- this_object$`status`
       }
       if (!is.null(this_object$`ids`)) {
-        self$`ids` <- ApiClient$new()$deserializeObj(this_object$`ids`, "array[integer]", loadNamespace("metexplore3api?"))
+        self$`ids` <- ApiClient$new()$deserializeObj(this_object$`ids`, "array[integer]", loadNamespace("metexplore3api"))
       }
       if (!is.null(this_object$`db_identifiers`)) {
-        self$`db_identifiers` <- ApiClient$new()$deserializeObj(this_object$`db_identifiers`, "array[character]", loadNamespace("metexplore3api?"))
+        self$`db_identifiers` <- ApiClient$new()$deserializeObj(this_object$`db_identifiers`, "array[character]", loadNamespace("metexplore3api"))
       }
       if (!is.null(this_object$`names`)) {
-        self$`names` <- ApiClient$new()$deserializeObj(this_object$`names`, "array[character]", loadNamespace("metexplore3api?"))
+        self$`names` <- ApiClient$new()$deserializeObj(this_object$`names`, "array[character]", loadNamespace("metexplore3api"))
       }
       self
     },
@@ -202,9 +202,9 @@ FiltersResponse <- R6::R6Class(
       self$`message` <- this_object$`message`
       self$`success` <- this_object$`success`
       self$`status` <- this_object$`status`
-      self$`ids` <- ApiClient$new()$deserializeObj(this_object$`ids`, "array[integer]", loadNamespace("metexplore3api?"))
-      self$`db_identifiers` <- ApiClient$new()$deserializeObj(this_object$`db_identifiers`, "array[character]", loadNamespace("metexplore3api?"))
-      self$`names` <- ApiClient$new()$deserializeObj(this_object$`names`, "array[character]", loadNamespace("metexplore3api?"))
+      self$`ids` <- ApiClient$new()$deserializeObj(this_object$`ids`, "array[integer]", loadNamespace("metexplore3api"))
+      self$`db_identifiers` <- ApiClient$new()$deserializeObj(this_object$`db_identifiers`, "array[character]", loadNamespace("metexplore3api"))
+      self$`names` <- ApiClient$new()$deserializeObj(this_object$`names`, "array[character]", loadNamespace("metexplore3api"))
       self
     },
 

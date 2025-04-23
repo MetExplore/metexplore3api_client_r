@@ -1,4 +1,4 @@
-# metexplore3api?::EnzymesResponse
+# metexplore3api::EnzymesResponse
 
 
 ## Properties

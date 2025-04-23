@@ -18,7 +18,7 @@ add a Network in a Collection
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # add a Network
 #
@@ -72,7 +72,7 @@ Get all networks or one network if the id is provided. If a user is authenticate
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # Get all networks
 #
@@ -123,7 +123,7 @@ Update a Metabolic Network
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # update a Metabolic Networ
 #

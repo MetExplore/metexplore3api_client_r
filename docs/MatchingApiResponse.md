@@ -1,4 +1,4 @@
-# metexplore3api?::MatchingApiResponse
+# metexplore3api::MatchingApiResponse
 
 
 ## Properties

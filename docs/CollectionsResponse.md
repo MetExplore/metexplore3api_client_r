@@ -1,4 +1,4 @@
-# metexplore3api?::CollectionsResponse
+# metexplore3api::CollectionsResponse
 
 
 ## Properties

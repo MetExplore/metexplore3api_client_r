@@ -1,4 +1,4 @@
-# metexplore3api?::Node
+# metexplore3api::Node
 
 
 ## Properties

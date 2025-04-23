@@ -18,7 +18,7 @@ add a Metabolic Network Collection in the database
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # add Metabolic Network Collection
 #
@@ -70,7 +70,7 @@ Delete a Collection.
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # delete a Metabolic Network Collection
 #
@@ -124,7 +124,7 @@ Get public and/or private Metabolic Network Collections. If the id is specified,
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # get Metabolic Network Collections
 #

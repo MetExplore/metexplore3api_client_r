@@ -98,7 +98,7 @@ NetworksResponse <- R6::R6Class(
         self$`status` <- this_object$`status`
       }
       if (!is.null(this_object$`networks`)) {
-        self$`networks` <- ApiClient$new()$deserializeObj(this_object$`networks`, "array[Network]", loadNamespace("metexplore3api?"))
+        self$`networks` <- ApiClient$new()$deserializeObj(this_object$`networks`, "array[Network]", loadNamespace("metexplore3api"))
       }
       self
     },
@@ -156,7 +156,7 @@ NetworksResponse <- R6::R6Class(
       self$`message` <- this_object$`message`
       self$`success` <- this_object$`success`
       self$`status` <- this_object$`status`
-      self$`networks` <- ApiClient$new()$deserializeObj(this_object$`networks`, "array[Network]", loadNamespace("metexplore3api?"))
+      self$`networks` <- ApiClient$new()$deserializeObj(this_object$`networks`, "array[Network]", loadNamespace("metexplore3api"))
       self
     },
 

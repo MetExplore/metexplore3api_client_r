@@ -1,4 +1,4 @@
-# metexplore3api?::Protein
+# metexplore3api::Protein
 
 Protein object
 

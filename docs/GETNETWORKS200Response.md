@@ -1,4 +1,4 @@
-# metexplore3api?::GETNETWORKS200Response
+# metexplore3api::GETNETWORKS200Response
 
 
 ## Properties

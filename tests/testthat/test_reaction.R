@@ -15,7 +15,7 @@ test_that("id", {
 
 test_that("name", {
   # tests for the property `name` (character)
-  # name for Reaction
+  # name
 
   # uncomment below to test the property
   #expect_equal(model.instance$`name`, "EXPECTED_RESULT")
@@ -38,16 +38,16 @@ test_that("id_collection", {
 })
 
 test_that("spontaneous", {
-  # tests for the property `spontaneous` (character)
-  # spontaneous for Reaction
+  # tests for the property `spontaneous` (numeric)
+  # spontaneous for Reaction (0 : false, 1 : true)
 
   # uncomment below to test the property
   #expect_equal(model.instance$`spontaneous`, "EXPECTED_RESULT")
 })
 
 test_that("generic", {
-  # tests for the property `generic` (character)
-  # generic for Reaction
+  # tests for the property `generic` (numeric)
+  # generic for Reaction (0 : false, 1 : true)
 
   # uncomment below to test the property
   #expect_equal(model.instance$`generic`, "EXPECTED_RESULT")
@@ -78,9 +78,33 @@ test_that("id_last_annotator", {
 })
 
 test_that("date_modification", {
-  # tests for the property `date_modification` (character)
+  # tests for the property `date_modification` (object)
   # date_modification for Reaction
 
   # uncomment below to test the property
   #expect_equal(model.instance$`date_modification`, "EXPECTED_RESULT")
+})
+
+test_that("reversible", {
+  # tests for the property `reversible` (numeric)
+  # reversible for Reaction (0 : false, 1 : true)
+
+  # uncomment below to test the property
+  #expect_equal(model.instance$`reversible`, "EXPECTED_RESULT")
+})
+
+test_that("eq_identifier", {
+  # tests for the property `eq_identifier` (character)
+  # Equation with identifiers
+
+  # uncomment below to test the property
+  #expect_equal(model.instance$`eq_identifier`, "EXPECTED_RESULT")
+})
+
+test_that("eq_name", {
+  # tests for the property `eq_name` (character)
+  # Equation with names
+
+  # uncomment below to test the property
+  #expect_equal(model.instance$`eq_name`, "EXPECTED_RESULT")
 })

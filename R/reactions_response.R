@@ -10,7 +10,7 @@
 #' @field message Message to describe that it's ok or not character
 #' @field success Indicates if the response is a success or a fail character
 #' @field status Code of the response integer
-#' @field reactions Array of Reaction list(\link{Reaction}) [optional]
+#' @field results Array of Reaction list(\link{Reaction}) [optional]
 #' @importFrom R6 R6Class
 #' @importFrom jsonlite fromJSON toJSON
 #' @export
@@ -20,7 +20,7 @@ ReactionsResponse <- R6::R6Class(
     `message` = NULL,
     `success` = NULL,
     `status` = NULL,
-    `reactions` = NULL,
+    `results` = NULL,
 
     #' @description
     #' Initialize a new ReactionsResponse class.
@@ -28,9 +28,9 @@ ReactionsResponse <- R6::R6Class(
     #' @param message Message to describe that it's ok or not
     #' @param success Indicates if the response is a success or a fail
     #' @param status Code of the response
-    #' @param reactions Array of Reaction
+    #' @param results Array of Reaction
     #' @param ... Other optional arguments.
-    initialize = function(`message`, `success`, `status`, `reactions` = NULL, ...) {
+    initialize = function(`message`, `success`, `status`, `results` = NULL, ...) {
       if (!missing(`message`)) {
         if (!(is.character(`message`) && length(`message`) == 1)) {
           stop(paste("Error! Invalid data for `message`. Must be a string:", `message`))
@@ -49,10 +49,10 @@ ReactionsResponse <- R6::R6Class(
         }
         self$`status` <- `status`
       }
-      if (!is.null(`reactions`)) {
-        stopifnot(is.vector(`reactions`), length(`reactions`) != 0)
-        sapply(`reactions`, function(x) stopifnot(R6::is.R6(x)))
-        self$`reactions` <- `reactions`
+      if (!is.null(`results`)) {
+        stopifnot(is.vector(`results`), length(`results`) != 0)
+        sapply(`results`, function(x) stopifnot(R6::is.R6(x)))
+        self$`results` <- `results`
       }
     },
 
@@ -74,9 +74,9 @@ ReactionsResponse <- R6::R6Class(
         ReactionsResponseObject[["status"]] <-
           self$`status`
       }
-      if (!is.null(self$`reactions`)) {
-        ReactionsResponseObject[["reactions"]] <-
-          lapply(self$`reactions`, function(x) x$toJSON())
+      if (!is.null(self$`results`)) {
+        ReactionsResponseObject[["results"]] <-
+          lapply(self$`results`, function(x) x$toJSON())
       }
       ReactionsResponseObject
     },
@@ -97,8 +97,8 @@ ReactionsResponse <- R6::R6Class(
       if (!is.null(this_object$`status`)) {
         self$`status` <- this_object$`status`
       }
-      if (!is.null(this_object$`reactions`)) {
-        self$`reactions` <- ApiClient$new()$deserializeObj(this_object$`reactions`, "array[Reaction]", loadNamespace("metexplore3api?"))
+      if (!is.null(this_object$`results`)) {
+        self$`results` <- ApiClient$new()$deserializeObj(this_object$`results`, "array[Reaction]", loadNamespace("metexplore3api"))
       }
       self
     },
@@ -133,12 +133,12 @@ ReactionsResponse <- R6::R6Class(
           self$`status`
           )
         },
-        if (!is.null(self$`reactions`)) {
+        if (!is.null(self$`results`)) {
           sprintf(
-          '"reactions":
+          '"results":
           [%s]
 ',
-          paste(sapply(self$`reactions`, function(x) jsonlite::toJSON(x$toJSON(), auto_unbox = TRUE, digits = NA)), collapse = ",")
+          paste(sapply(self$`results`, function(x) jsonlite::toJSON(x$toJSON(), auto_unbox = TRUE, digits = NA)), collapse = ",")
           )
         }
       )
@@ -156,7 +156,7 @@ ReactionsResponse <- R6::R6Class(
       self$`message` <- this_object$`message`
       self$`success` <- this_object$`success`
       self$`status` <- this_object$`status`
-      self$`reactions` <- ApiClient$new()$deserializeObj(this_object$`reactions`, "array[Reaction]", loadNamespace("metexplore3api?"))
+      self$`results` <- ApiClient$new()$deserializeObj(this_object$`results`, "array[Reaction]", loadNamespace("metexplore3api"))
       self
     },
 

@@ -1,4 +1,4 @@
-# metexplore3api?::Step
+# metexplore3api::Step
 
 A step from an analysis
 

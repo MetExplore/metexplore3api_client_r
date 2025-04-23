@@ -1,4 +1,4 @@
-# metexplore3api?::NetworkEntity
+# metexplore3api::NetworkEntity
 
 Entity linked to a Network
 

@@ -1,4 +1,4 @@
-# metexplore3api?::DELNETWORKRequest
+# metexplore3api::DELNETWORKRequest
 
 Object containing the network id
 

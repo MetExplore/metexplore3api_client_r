@@ -1,4 +1,4 @@
-# metexplore3api?::AnalysisMapping
+# metexplore3api::AnalysisMapping
 
 Analysis Mapping object
 

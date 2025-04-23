@@ -10,7 +10,7 @@ test_that("AddMappingAnalyses", {
   # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
   # add Mapping Analysis
   # add an mapping Analysis with data in the body of the request as json (MappingResponse)
-  # @param mapping_output MappingOutput  (optional)
+  # @param add_mapping_analyses_request AddMappingAnalysesRequest  (optional)
   # @return [AnalysisResponse]
 
   # uncomment below to test the operation

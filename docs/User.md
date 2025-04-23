@@ -1,4 +1,4 @@
-# metexplore3api?::User
+# metexplore3api::User
 
 User data
 

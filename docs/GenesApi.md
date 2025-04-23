@@ -20,7 +20,7 @@ get the number of genes for one network
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # get the number of genes for one network
 #
@@ -70,7 +70,7 @@ delete for Gene
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # del Gene
 #
@@ -123,7 +123,7 @@ get from Gene
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # get Gene
 #
@@ -173,7 +173,7 @@ add for Gene
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # add Gene
 #
@@ -227,7 +227,7 @@ update for Gene
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # update Gene
 #

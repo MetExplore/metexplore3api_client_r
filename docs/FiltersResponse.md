@@ -1,4 +1,4 @@
-# metexplore3api?::FiltersResponse
+# metexplore3api::FiltersResponse
 
 
 ## Properties

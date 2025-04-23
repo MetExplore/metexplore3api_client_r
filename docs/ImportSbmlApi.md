@@ -16,7 +16,7 @@ Import an SBML file and creates a new Network in the database.
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # Import an SBML file
 #

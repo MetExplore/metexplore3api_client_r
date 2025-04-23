@@ -6,6 +6,7 @@
 .travis.yml
 DESCRIPTION
 NAMESPACE
+R/add_mapping_analyses_request.R
 R/analyses_api.R
 R/analyses_mapping_response.R
 R/analyses_response.R
@@ -49,6 +50,8 @@ R/enzyme.R
 R/enzyme_response.R
 R/enzymes_api.R
 R/enzymes_response.R
+R/export_response.R
+R/export_sbml_api.R
 R/filter.R
 R/filters_api.R
 R/filters_response.R
@@ -111,6 +114,7 @@ R/user.R
 R/user_response.R
 R/users_api.R
 README.md
+docs/AddMappingAnalysesRequest.md
 docs/AnalysesApi.md
 docs/AnalysesMappingResponse.md
 docs/AnalysesResponse.md
@@ -152,6 +156,8 @@ docs/Enzyme.md
 docs/EnzymeResponse.md
 docs/EnzymesApi.md
 docs/EnzymesResponse.md
+docs/ExportResponse.md
+docs/ExportSbmlApi.md
 docs/Filter.md
 docs/FiltersApi.md
 docs/FiltersResponse.md
@@ -215,6 +221,7 @@ docs/UserResponse.md
 docs/UsersApi.md
 git_push.sh
 tests/testthat.R
+tests/testthat/test_add_mapping_analyses_request.R
 tests/testthat/test_analyses_api.R
 tests/testthat/test_analyses_mapping_response.R
 tests/testthat/test_analyses_response.R
@@ -256,6 +263,8 @@ tests/testthat/test_enzyme.R
 tests/testthat/test_enzyme_response.R
 tests/testthat/test_enzymes_api.R
 tests/testthat/test_enzymes_response.R
+tests/testthat/test_export_response.R
+tests/testthat/test_export_sbml_api.R
 tests/testthat/test_filter.R
 tests/testthat/test_filters_api.R
 tests/testthat/test_filters_response.R

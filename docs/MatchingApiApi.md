@@ -16,7 +16,7 @@ Ask the MetaboAnalyst API to convert compounds name into IDs
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # get compounds IDs
 #

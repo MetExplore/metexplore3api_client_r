@@ -1,4 +1,4 @@
-# metexplore3api?::Filter
+# metexplore3api::Filter
 
 result filter object
 

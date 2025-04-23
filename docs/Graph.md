@@ -1,4 +1,4 @@
-# metexplore3api?::Graph
+# metexplore3api::Graph
 
 
 ## Properties

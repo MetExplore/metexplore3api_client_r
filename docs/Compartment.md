@@ -1,4 +1,4 @@
-# metexplore3api?::Compartment
+# metexplore3api::Compartment
 
 Gene object
 

@@ -1,4 +1,4 @@
-# metexplore3api?::MappingOutput
+# metexplore3api::MappingOutput
 
 
 ## Properties

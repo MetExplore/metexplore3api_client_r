@@ -20,7 +20,7 @@ get the number of pathways in a network
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # get the number of pathways in a network
 #
@@ -70,7 +70,7 @@ delete for Pathway
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # del Pathway
 #
@@ -124,7 +124,7 @@ get from Pathway
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # get Pathway
 #
@@ -178,7 +178,7 @@ add for Pathway
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # add Pathway
 #
@@ -232,7 +232,7 @@ update for Pathway
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # update Pathway
 #

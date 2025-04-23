@@ -1,4 +1,4 @@
-# metexplore3api?::MappingOutputEntities
+# metexplore3api::MappingOutputEntities
 
 
 ## Properties

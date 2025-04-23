@@ -20,7 +20,7 @@ get the number of proteins for a network
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # get the number of proteins for a network
 #
@@ -70,7 +70,7 @@ delete for Protein
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # del Protein
 #
@@ -123,7 +123,7 @@ get from Protein
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # get Protein
 #
@@ -177,7 +177,7 @@ add for Protein
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # add Protein
 #
@@ -231,7 +231,7 @@ update for Protein
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # update Protein
 #

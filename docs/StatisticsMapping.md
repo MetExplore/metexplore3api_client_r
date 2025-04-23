@@ -1,4 +1,4 @@
-# metexplore3api?::StatisticsMapping
+# metexplore3api::StatisticsMapping
 
 Statistics Mapping
 

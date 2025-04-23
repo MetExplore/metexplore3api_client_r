@@ -1,4 +1,4 @@
-# metexplore3api?::GraphsResponse
+# metexplore3api::GraphsResponse
 
 
 ## Properties

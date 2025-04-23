@@ -65,7 +65,7 @@ MappingInputTable <- R6::R6Class(
     fromJSON = function(input_json) {
       this_object <- jsonlite::fromJSON(input_json)
       if (!is.null(this_object$`ids`)) {
-        self$`ids` <- ApiClient$new()$deserializeObj(this_object$`ids`, "array[character]", loadNamespace("metexplore3api?"))
+        self$`ids` <- ApiClient$new()$deserializeObj(this_object$`ids`, "array[character]", loadNamespace("metexplore3api"))
       }
       # process additional properties/fields in the payload
       for (key in names(this_object)) {
@@ -108,7 +108,7 @@ MappingInputTable <- R6::R6Class(
     #' @return the instance of MappingInputTable
     fromJSONString = function(input_json) {
       this_object <- jsonlite::fromJSON(input_json)
-      self$`ids` <- ApiClient$new()$deserializeObj(this_object$`ids`, "array[character]", loadNamespace("metexplore3api?"))
+      self$`ids` <- ApiClient$new()$deserializeObj(this_object$`ids`, "array[character]", loadNamespace("metexplore3api"))
       # process additional properties/fields in the payload
       for (key in names(this_object)) {
         if (!(key %in% self$`_field_list`)) { # json key not in list of fields

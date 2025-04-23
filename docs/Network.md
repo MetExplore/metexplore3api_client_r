@@ -1,4 +1,4 @@
-# metexplore3api?::Network
+# metexplore3api::Network
 
 Network object
 

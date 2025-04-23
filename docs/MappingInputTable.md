@@ -1,4 +1,4 @@
-# metexplore3api?::MappingInputTable
+# metexplore3api::MappingInputTable
 
 Mapping input table. Must contain one key \"ids\"
 

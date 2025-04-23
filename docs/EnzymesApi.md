@@ -20,7 +20,7 @@ get the number of enzymes for one network
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # count ligns Enzyme
 #
@@ -70,7 +70,7 @@ delete for Enzyme
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # del Enzyme
 #
@@ -123,7 +123,7 @@ get from Enzyme
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # get Enzyme
 #
@@ -172,7 +172,7 @@ add for Enzyme
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # add Enzyme
 #
@@ -226,7 +226,7 @@ update for Enzyme
 
 ### Example
 ```R
-library(metexplore3api?)
+library(metexplore3api)
 
 # update Enzyme
 #

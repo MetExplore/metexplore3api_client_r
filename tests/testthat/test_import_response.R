@@ -28,3 +28,11 @@ test_that("status", {
   # uncomment below to test the property
   #expect_equal(model.instance$`status`, "EXPECTED_RESULT")
 })
+
+test_that("result", {
+  # tests for the property `result` (character)
+  # The id of the job
+
+  # uncomment below to test the property
+  #expect_equal(model.instance$`result`, "EXPECTED_RESULT")
+})

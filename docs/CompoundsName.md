@@ -1,4 +1,4 @@
-# metexplore3api?::CompoundsName
+# metexplore3api::CompoundsName
 
 list of compounds names to convert
 
