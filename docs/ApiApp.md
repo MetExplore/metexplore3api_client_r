@@ -5,7 +5,7 @@ Api App
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **integer** | id in database | 
+**id** | **integer** | id in database | [optional] 
 **name** | **character** | name of the app | [optional] [default to &quot;Not defined&quot;] 
 **institution** | **character** | institution of the app | [optional] [default to &quot;Not defined&quot;] 
 **lab** | **character** | lab of the app | [optional] [default to &quot;Not defined&quot;] 

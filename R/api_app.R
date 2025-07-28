@@ -7,7 +7,7 @@
 #' @title ApiApp
 #' @description ApiApp Class
 #' @format An \code{R6Class} generator object
-#' @field id id in database integer
+#' @field id id in database integer [optional]
 #' @field name name of the app character [optional]
 #' @field institution institution of the app character [optional]
 #' @field lab lab of the app character [optional]
@@ -39,8 +39,8 @@ ApiApp <- R6::R6Class(
     #' @param token token of the app. Default to "Not defined".
     #' @param protected If an app is protected, it can't be deleted by the api.. Default to PROTECTED_0_.
     #' @param ... Other optional arguments.
-    initialize = function(`id`, `name` = "Not defined", `institution` = "Not defined", `lab` = "Not defined", `description` = "Not defined", `token` = "Not defined", `protected` = PROTECTED_0_, ...) {
-      if (!missing(`id`)) {
+    initialize = function(`id` = NULL, `name` = "Not defined", `institution` = "Not defined", `lab` = "Not defined", `description` = "Not defined", `token` = "Not defined", `protected` = PROTECTED_0_, ...) {
+      if (!is.null(`id`)) {
         if (!(is.numeric(`id`) && length(`id`) == 1)) {
           stop(paste("Error! Invalid data for `id`. Must be an integer:", `id`))
         }
@@ -251,14 +251,6 @@ ApiApp <- R6::R6Class(
     #' @param input the JSON input
     validateJSON = function(input) {
       input_json <- jsonlite::fromJSON(input)
-      # check the required field `id`
-      if (!is.null(input_json$`id`)) {
-        if (!(is.numeric(input_json$`id`) && length(input_json$`id`) == 1)) {
-          stop(paste("Error! Invalid data for `id`. Must be an integer:", input_json$`id`))
-        }
-      } else {
-        stop(paste("The JSON input `", input, "` is invalid for ApiApp: the required field `id` is missing."))
-      }
     },
 
     #' @description
@@ -274,11 +266,6 @@ ApiApp <- R6::R6Class(
     #'
     #' @return true if the values in all fields are valid.
     isValid = function() {
-      # check if the required `id` is null
-      if (is.null(self$`id`)) {
-        return(FALSE)
-      }
-
       TRUE
     },
 
@@ -288,11 +275,6 @@ ApiApp <- R6::R6Class(
     #' @return A list of invalid fields (if any).
     getInvalidFields = function() {
       invalid_fields <- list()
-      # check if the required `id` is null
-      if (is.null(self$`id`)) {
-        invalid_fields["id"] <- "Non-nullable required field `id` cannot be null."
-      }
-
       invalid_fields
     },
 

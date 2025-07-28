@@ -26,6 +26,11 @@
 #' @field top Indicates if the Network is among the top Networks in MetExplore integer [optional]
 #' @field visits Number of times where this Network has been selected integer [optional]
 #' @field permission Permission of the user on the network \link{Permission} [optional]
+#' @field nb_pathways number of pathways in the network integer [optional]
+#' @field nb_reactions number of reactions in the network integer [optional]
+#' @field nb_metabolites number of metabolites in the network integer [optional]
+#' @field nb_genes number of genes in the network integer [optional]
+#' @field user_visits Number of visits to the network by the authenticated user integer [optional]
 #' @importFrom R6 R6Class
 #' @importFrom jsonlite fromJSON toJSON
 #' @export
@@ -51,6 +56,11 @@ Network <- R6::R6Class(
     `top` = NULL,
     `visits` = NULL,
     `permission` = NULL,
+    `nb_pathways` = NULL,
+    `nb_reactions` = NULL,
+    `nb_metabolites` = NULL,
+    `nb_genes` = NULL,
+    `user_visits` = NULL,
 
     #' @description
     #' Initialize a new Network class.
@@ -74,8 +84,13 @@ Network <- R6::R6Class(
     #' @param top Indicates if the Network is among the top Networks in MetExplore. Default to 0.
     #' @param visits Number of times where this Network has been selected
     #' @param permission Permission of the user on the network
+    #' @param nb_pathways number of pathways in the network
+    #' @param nb_reactions number of reactions in the network
+    #' @param nb_metabolites number of metabolites in the network
+    #' @param nb_genes number of genes in the network
+    #' @param user_visits Number of visits to the network by the authenticated user
     #' @param ... Other optional arguments.
-    initialize = function(`id` = NULL, `name` = NULL, `id_collection` = NULL, `ncbi_id` = 12908, `organism_name` = "Not defined", `db_identifier` = NULL, `strain` = NULL, `tissue` = NULL, `cell_type` = NULL, `source` = NULL, `version` = NULL, `description` = NULL, `url` = NULL, `identifier_origin` = NULL, `date_creation` = NULL, `date_last_modif` = NULL, `top` = 0, `visits` = NULL, `permission` = NULL, ...) {
+    initialize = function(`id` = NULL, `name` = NULL, `id_collection` = NULL, `ncbi_id` = 12908, `organism_name` = "Not defined", `db_identifier` = NULL, `strain` = NULL, `tissue` = NULL, `cell_type` = NULL, `source` = NULL, `version` = NULL, `description` = NULL, `url` = NULL, `identifier_origin` = NULL, `date_creation` = NULL, `date_last_modif` = NULL, `top` = 0, `visits` = NULL, `permission` = NULL, `nb_pathways` = NULL, `nb_reactions` = NULL, `nb_metabolites` = NULL, `nb_genes` = NULL, `user_visits` = NULL, ...) {
       if (!is.null(`id`)) {
         if (!(is.numeric(`id`) && length(`id`) == 1)) {
           stop(paste("Error! Invalid data for `id`. Must be an integer:", `id`))
@@ -191,6 +206,36 @@ Network <- R6::R6Class(
         stopifnot(R6::is.R6(`permission`))
         self$`permission` <- `permission`
       }
+      if (!is.null(`nb_pathways`)) {
+        if (!(is.numeric(`nb_pathways`) && length(`nb_pathways`) == 1)) {
+          stop(paste("Error! Invalid data for `nb_pathways`. Must be an integer:", `nb_pathways`))
+        }
+        self$`nb_pathways` <- `nb_pathways`
+      }
+      if (!is.null(`nb_reactions`)) {
+        if (!(is.numeric(`nb_reactions`) && length(`nb_reactions`) == 1)) {
+          stop(paste("Error! Invalid data for `nb_reactions`. Must be an integer:", `nb_reactions`))
+        }
+        self$`nb_reactions` <- `nb_reactions`
+      }
+      if (!is.null(`nb_metabolites`)) {
+        if (!(is.numeric(`nb_metabolites`) && length(`nb_metabolites`) == 1)) {
+          stop(paste("Error! Invalid data for `nb_metabolites`. Must be an integer:", `nb_metabolites`))
+        }
+        self$`nb_metabolites` <- `nb_metabolites`
+      }
+      if (!is.null(`nb_genes`)) {
+        if (!(is.numeric(`nb_genes`) && length(`nb_genes`) == 1)) {
+          stop(paste("Error! Invalid data for `nb_genes`. Must be an integer:", `nb_genes`))
+        }
+        self$`nb_genes` <- `nb_genes`
+      }
+      if (!is.null(`user_visits`)) {
+        if (!(is.numeric(`user_visits`) && length(`user_visits`) == 1)) {
+          stop(paste("Error! Invalid data for `user_visits`. Must be an integer:", `user_visits`))
+        }
+        self$`user_visits` <- `user_visits`
+      }
     },
 
     #' @description
@@ -275,6 +320,26 @@ Network <- R6::R6Class(
         NetworkObject[["permission"]] <-
           self$`permission`$toJSON()
       }
+      if (!is.null(self$`nb_pathways`)) {
+        NetworkObject[["nb_pathways"]] <-
+          self$`nb_pathways`
+      }
+      if (!is.null(self$`nb_reactions`)) {
+        NetworkObject[["nb_reactions"]] <-
+          self$`nb_reactions`
+      }
+      if (!is.null(self$`nb_metabolites`)) {
+        NetworkObject[["nb_metabolites"]] <-
+          self$`nb_metabolites`
+      }
+      if (!is.null(self$`nb_genes`)) {
+        NetworkObject[["nb_genes"]] <-
+          self$`nb_genes`
+      }
+      if (!is.null(self$`user_visits`)) {
+        NetworkObject[["user_visits"]] <-
+          self$`user_visits`
+      }
       NetworkObject
     },
 
@@ -343,6 +408,21 @@ Network <- R6::R6Class(
         `permission_object` <- Permission$new()
         `permission_object`$fromJSON(jsonlite::toJSON(this_object$`permission`, auto_unbox = TRUE, digits = NA))
         self$`permission` <- `permission_object`
+      }
+      if (!is.null(this_object$`nb_pathways`)) {
+        self$`nb_pathways` <- this_object$`nb_pathways`
+      }
+      if (!is.null(this_object$`nb_reactions`)) {
+        self$`nb_reactions` <- this_object$`nb_reactions`
+      }
+      if (!is.null(this_object$`nb_metabolites`)) {
+        self$`nb_metabolites` <- this_object$`nb_metabolites`
+      }
+      if (!is.null(this_object$`nb_genes`)) {
+        self$`nb_genes` <- this_object$`nb_genes`
+      }
+      if (!is.null(this_object$`user_visits`)) {
+        self$`user_visits` <- this_object$`user_visits`
       }
       self
     },
@@ -504,6 +584,46 @@ Network <- R6::R6Class(
           ',
           jsonlite::toJSON(self$`permission`$toJSON(), auto_unbox = TRUE, digits = NA)
           )
+        },
+        if (!is.null(self$`nb_pathways`)) {
+          sprintf(
+          '"nb_pathways":
+            %d
+                    ',
+          self$`nb_pathways`
+          )
+        },
+        if (!is.null(self$`nb_reactions`)) {
+          sprintf(
+          '"nb_reactions":
+            %d
+                    ',
+          self$`nb_reactions`
+          )
+        },
+        if (!is.null(self$`nb_metabolites`)) {
+          sprintf(
+          '"nb_metabolites":
+            %d
+                    ',
+          self$`nb_metabolites`
+          )
+        },
+        if (!is.null(self$`nb_genes`)) {
+          sprintf(
+          '"nb_genes":
+            %d
+                    ',
+          self$`nb_genes`
+          )
+        },
+        if (!is.null(self$`user_visits`)) {
+          sprintf(
+          '"user_visits":
+            %d
+                    ',
+          self$`user_visits`
+          )
         }
       )
       jsoncontent <- paste(jsoncontent, collapse = ",")
@@ -536,6 +656,11 @@ Network <- R6::R6Class(
       self$`top` <- this_object$`top`
       self$`visits` <- this_object$`visits`
       self$`permission` <- Permission$new()$fromJSON(jsonlite::toJSON(this_object$`permission`, auto_unbox = TRUE, digits = NA))
+      self$`nb_pathways` <- this_object$`nb_pathways`
+      self$`nb_reactions` <- this_object$`nb_reactions`
+      self$`nb_metabolites` <- this_object$`nb_metabolites`
+      self$`nb_genes` <- this_object$`nb_genes`
+      self$`user_visits` <- this_object$`user_visits`
       self
     },
 
@@ -560,11 +685,11 @@ Network <- R6::R6Class(
     #'
     #' @return true if the values in all fields are valid.
     isValid = function() {
-      if (!str_detect(self$`date_creation`, "^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2}$")) {
+      if (!str_detect(self$`date_creation`, "^\\d{4}-\\d{1,2}-\\d{1,2}\\s\\d{1,2}:\\d{1,2}:\\d{1,2}$")) {
         return(FALSE)
       }
 
-      if (!str_detect(self$`date_last_modif`, "^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2}$")) {
+      if (!str_detect(self$`date_last_modif`, "^\\d{4}-\\d{1,2}-\\d{1,2}\\s\\d{1,2}:\\d{1,2}:\\d{1,2}$")) {
         return(FALSE)
       }
 
@@ -577,12 +702,12 @@ Network <- R6::R6Class(
     #' @return A list of invalid fields (if any).
     getInvalidFields = function() {
       invalid_fields <- list()
-      if (!str_detect(self$`date_creation`, "^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2}$")) {
-        invalid_fields["date_creation"] <- "Invalid value for `date_creation`, must conform to the pattern ^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2}$."
+      if (!str_detect(self$`date_creation`, "^\\d{4}-\\d{1,2}-\\d{1,2}\\s\\d{1,2}:\\d{1,2}:\\d{1,2}$")) {
+        invalid_fields["date_creation"] <- "Invalid value for `date_creation`, must conform to the pattern ^\\d{4}-\\d{1,2}-\\d{1,2}\\s\\d{1,2}:\\d{1,2}:\\d{1,2}$."
       }
 
-      if (!str_detect(self$`date_last_modif`, "^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2}$")) {
-        invalid_fields["date_last_modif"] <- "Invalid value for `date_last_modif`, must conform to the pattern ^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2}$."
+      if (!str_detect(self$`date_last_modif`, "^\\d{4}-\\d{1,2}-\\d{1,2}\\s\\d{1,2}:\\d{1,2}:\\d{1,2}$")) {
+        invalid_fields["date_last_modif"] <- "Invalid value for `date_last_modif`, must conform to the pattern ^\\d{4}-\\d{1,2}-\\d{1,2}\\s\\d{1,2}:\\d{1,2}:\\d{1,2}$."
       }
 
       invalid_fields

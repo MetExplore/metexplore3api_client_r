@@ -156,3 +156,43 @@ test_that("permission", {
   # uncomment below to test the property
   #expect_equal(model.instance$`permission`, "EXPECTED_RESULT")
 })
+
+test_that("nb_pathways", {
+  # tests for the property `nb_pathways` (integer)
+  # number of pathways in the network
+
+  # uncomment below to test the property
+  #expect_equal(model.instance$`nb_pathways`, "EXPECTED_RESULT")
+})
+
+test_that("nb_reactions", {
+  # tests for the property `nb_reactions` (integer)
+  # number of reactions in the network
+
+  # uncomment below to test the property
+  #expect_equal(model.instance$`nb_reactions`, "EXPECTED_RESULT")
+})
+
+test_that("nb_metabolites", {
+  # tests for the property `nb_metabolites` (integer)
+  # number of metabolites in the network
+
+  # uncomment below to test the property
+  #expect_equal(model.instance$`nb_metabolites`, "EXPECTED_RESULT")
+})
+
+test_that("nb_genes", {
+  # tests for the property `nb_genes` (integer)
+  # number of genes in the network
+
+  # uncomment below to test the property
+  #expect_equal(model.instance$`nb_genes`, "EXPECTED_RESULT")
+})
+
+test_that("user_visits", {
+  # tests for the property `user_visits` (integer)
+  # Number of visits to the network by the authenticated user
+
+  # uncomment below to test the property
+  #expect_equal(model.instance$`user_visits`, "EXPECTED_RESULT")
+})

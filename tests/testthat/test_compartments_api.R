@@ -5,30 +5,6 @@ context("Test CompartmentsApi")
 
 api_instance <- CompartmentsApi$new()
 
-test_that("COUNTCOMPARTMENTS", {
-  # tests for COUNTCOMPARTMENTS
-  # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
-  # count number of compartments in a network
-  # count number of compartments in a network
-  # @param id_network integer the id_network for the compartment
-  # @return [CountResponse]
-
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
-})
-
-test_that("DELCOMPARTMENT", {
-  # tests for DELCOMPARTMENT
-  # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
-  # Delete a Compartment from a Network
-  # Delete a Compartment from a Network
-  # @param compartment array[Compartment]  (optional)
-  # @return [BaseResponse]
-
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
-})
-
 test_that("GETCOMPARTMENTS", {
   # tests for GETCOMPARTMENTS
   # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
@@ -36,30 +12,6 @@ test_that("GETCOMPARTMENTS", {
   # get compartments in a network
   # @param id_network integer the id of the network
   # @return [CompartmentsResponse]
-
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
-})
-
-test_that("POSTCOMPARTMENT", {
-  # tests for POSTCOMPARTMENT
-  # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
-  # add a compartment in a Network
-  # add a compartment in a Network
-  # @param compartment Compartment  (optional)
-  # @return [CompartmentResponse]
-
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
-})
-
-test_that("UPDATECOMPARTMENT", {
-  # tests for UPDATECOMPARTMENT
-  # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
-  # update a compartment
-  # update a compartment
-  # @param compartment array[Compartment]  (optional)
-  # @return [BaseResponse]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")

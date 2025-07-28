@@ -30,7 +30,7 @@ test_that("status", {
 })
 
 test_that("count", {
-  # tests for the property `count` (integer)
+  # tests for the property `count` (CountResponseAllOfCount)
 
   # uncomment below to test the property
   #expect_equal(model.instance$`count`, "EXPECTED_RESULT")

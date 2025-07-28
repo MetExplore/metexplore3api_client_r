@@ -5,30 +5,6 @@ context("Test GenesApi")
 
 api_instance <- GenesApi$new()
 
-test_that("COUNTGENES", {
-  # tests for COUNTGENES
-  # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
-  # get the number of genes for one network
-  # get the number of genes for one network
-  # @param id_network integer the id_network for the genes
-  # @return [CountResponse]
-
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
-})
-
-test_that("DELGENE", {
-  # tests for DELGENE
-  # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
-  # del Gene
-  # delete for Gene
-  # @param gene array[Gene]  (optional)
-  # @return [BaseResponse]
-
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
-})
-
 test_that("GETGENES", {
   # tests for GETGENES
   # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
@@ -36,30 +12,6 @@ test_that("GETGENES", {
   # get from Gene
   # @param id_network integer the id_network for the Gene
   # @return [GenesResponse]
-
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
-})
-
-test_that("POSTGENE", {
-  # tests for POSTGENE
-  # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
-  # add Gene
-  # add for Gene
-  # @param gene array[Gene]  (optional)
-  # @return [GeneResponse]
-
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
-})
-
-test_that("UPDATEGENE", {
-  # tests for UPDATEGENE
-  # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
-  # update Gene
-  # update for Gene
-  # @param gene array[Gene]  (optional)
-  # @return [BaseResponse]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")
