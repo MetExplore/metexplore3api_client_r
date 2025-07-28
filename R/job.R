@@ -53,8 +53,8 @@ Job <- R6::R6Class(
         self$`title` <- `title`
       }
       if (!missing(`status`)) {
-        if (!(`status` %in% c("failed", "finished", "running"))) {
-          stop(paste("Error! \"", `status`, "\" cannot be assigned to `status`. Must be \"failed\", \"finished\", \"running\".", sep = ""))
+        if (!(`status` %in% c("failed", "finished", "running", "waiting"))) {
+          stop(paste("Error! \"", `status`, "\" cannot be assigned to `status`. Must be \"failed\", \"finished\", \"running\", \"waiting\".", sep = ""))
         }
         if (!(is.character(`status`) && length(`status`) == 1)) {
           stop(paste("Error! Invalid data for `status`. Must be a string:", `status`))
@@ -138,8 +138,8 @@ Job <- R6::R6Class(
         self$`title` <- this_object$`title`
       }
       if (!is.null(this_object$`status`)) {
-        if (!is.null(this_object$`status`) && !(this_object$`status` %in% c("failed", "finished", "running"))) {
-          stop(paste("Error! \"", this_object$`status`, "\" cannot be assigned to `status`. Must be \"failed\", \"finished\", \"running\".", sep = ""))
+        if (!is.null(this_object$`status`) && !(this_object$`status` %in% c("failed", "finished", "running", "waiting"))) {
+          stop(paste("Error! \"", this_object$`status`, "\" cannot be assigned to `status`. Must be \"failed\", \"finished\", \"running\", \"waiting\".", sep = ""))
         }
         self$`status` <- this_object$`status`
       }
@@ -234,8 +234,8 @@ Job <- R6::R6Class(
       this_object <- jsonlite::fromJSON(input_json)
       self$`id` <- this_object$`id`
       self$`title` <- this_object$`title`
-      if (!is.null(this_object$`status`) && !(this_object$`status` %in% c("failed", "finished", "running"))) {
-        stop(paste("Error! \"", this_object$`status`, "\" cannot be assigned to `status`. Must be \"failed\", \"finished\", \"running\".", sep = ""))
+      if (!is.null(this_object$`status`) && !(this_object$`status` %in% c("failed", "finished", "running", "waiting"))) {
+        stop(paste("Error! \"", this_object$`status`, "\" cannot be assigned to `status`. Must be \"failed\", \"finished\", \"running\", \"waiting\".", sep = ""))
       }
       self$`status` <- this_object$`status`
       self$`log` <- this_object$`log`
@@ -326,7 +326,7 @@ Job <- R6::R6Class(
         return(FALSE)
       }
 
-      if (!str_detect(self$`date`, "^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2}$")) {
+      if (!str_detect(self$`date`, "^\\d{4}-\\d{1,2}-\\d{1,2}\\s\\d{1,2}:\\d{1,2}:\\d{1,2}$")) {
         return(FALSE)
       }
 
@@ -359,8 +359,8 @@ Job <- R6::R6Class(
         invalid_fields["log"] <- "Non-nullable required field `log` cannot be null."
       }
 
-      if (!str_detect(self$`date`, "^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2}$")) {
-        invalid_fields["date"] <- "Invalid value for `date`, must conform to the pattern ^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2}$."
+      if (!str_detect(self$`date`, "^\\d{4}-\\d{1,2}-\\d{1,2}\\s\\d{1,2}:\\d{1,2}:\\d{1,2}$")) {
+        invalid_fields["date"] <- "Invalid value for `date`, must conform to the pattern ^\\d{4}-\\d{1,2}-\\d{1,2}\\s\\d{1,2}:\\d{1,2}:\\d{1,2}$."
       }
 
       invalid_fields

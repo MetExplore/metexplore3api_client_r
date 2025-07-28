@@ -5,30 +5,6 @@ context("Test PathwaysApi")
 
 api_instance <- PathwaysApi$new()
 
-test_that("COUNTPATHWAYS", {
-  # tests for COUNTPATHWAYS
-  # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
-  # get the number of pathways in a network
-  # get the number of pathways in a network
-  # @param id_network integer the id_network for the pathways
-  # @return [CountResponse]
-
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
-})
-
-test_that("DELPATHWAY", {
-  # tests for DELPATHWAY
-  # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
-  # del Pathway
-  # delete for Pathway
-  # @param pathway array[Pathway]  (optional)
-  # @return [PathwaysResponse]
-
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
-})
-
 test_that("GETPATHWAYS", {
   # tests for GETPATHWAYS
   # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
@@ -37,30 +13,6 @@ test_that("GETPATHWAYS", {
   # @param id integer the id for the Pathway (optional)
   # @param id_network integer the id_network for the Pathway (optional)
   # @param id_collection integer the id_collection for the Pathway (optional)
-  # @return [PathwaysResponse]
-
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
-})
-
-test_that("POSTPATHWAY", {
-  # tests for POSTPATHWAY
-  # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
-  # add Pathway
-  # add for Pathway
-  # @param pathway array[Pathway]  (optional)
-  # @return [PathwayResponse]
-
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
-})
-
-test_that("UPDATEPATHWAY", {
-  # tests for UPDATEPATHWAY
-  # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
-  # update Pathway
-  # update for Pathway
-  # @param pathway array[Pathway]  (optional)
   # @return [PathwaysResponse]
 
   # uncomment below to test the operation

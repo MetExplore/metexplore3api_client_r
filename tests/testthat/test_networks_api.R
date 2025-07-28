@@ -5,38 +5,28 @@ context("Test NetworksApi")
 
 api_instance <- NetworksApi$new()
 
-test_that("ADDNETWORK", {
-  # tests for ADDNETWORK
-  # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
-  # add a Network
-  # add a Network in a Collection
-  # @param network array[Network]  (optional)
-  # @return [NetworkResponse]
-
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
-})
-
 test_that("GETNETWORKS", {
   # tests for GETNETWORKS
   # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
-  # Get all networks
-  # Get all networks or one network if the id is provided. If a user is authenticated, get both public and private networks. If a network id is provided, the user must have the read rights on the network 
+  # Get all networks or one network
+  # Get all networks, a specific network (if an ID is provided), or specific pathway(s) or compartment(s) within a network (if both the network ID and the corresponding pathway or compartment IDs are provided). You may request pathway(s) or compartment(s), not both at the same time. If the user is authenticated, both public and private networks will be returned. If a network ID is provided, the user must have read access to that network. 
   # @param id integer the network id (optional)
   # @param format character format of the output (optional)
+  # @param pathway character the pathway(s) id (optional)
+  # @param compartment character the compartment(s) id (optional)
   # @return [GETNETWORKS200Response]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("UPDATENETWORK", {
-  # tests for UPDATENETWORK
+test_that("NETWORKCOUNT", {
+  # tests for NETWORKCOUNT
   # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
-  # update a Metabolic Networ
-  # Update a Metabolic Network
-  # @param network Network  (optional)
-  # @return [NetworkResponse]
+  # get the number of all biodatas in a network
+  # get the number of all biodatas in a network
+  # @param id integer the network id
+  # @return [CountResponse]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")

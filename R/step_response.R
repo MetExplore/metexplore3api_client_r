@@ -10,7 +10,7 @@
 #' @field message Message to describe that it's ok or not character
 #' @field success Indicates if the response is a success or a fail character
 #' @field status Code of the response integer
-#' @field steps Specific step of an analysis list(\link{Step}) [optional]
+#' @field steps Array of steps list(\link{Step}) [optional]
 #' @importFrom R6 R6Class
 #' @importFrom jsonlite fromJSON toJSON
 #' @export
@@ -28,7 +28,7 @@ StepResponse <- R6::R6Class(
     #' @param message Message to describe that it's ok or not
     #' @param success Indicates if the response is a success or a fail
     #' @param status Code of the response
-    #' @param steps Specific step of an analysis
+    #' @param steps Array of steps
     #' @param ... Other optional arguments.
     initialize = function(`message`, `success`, `status`, `steps` = NULL, ...) {
       if (!missing(`message`)) {

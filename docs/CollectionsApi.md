@@ -4,24 +4,25 @@ All URIs are relative to *https://metexplore.toulouse.inrae.fr/metexplore3-api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**UPDATECOLLECTION**](CollectionsApi.md#UPDATECOLLECTION) | **PATCH** /collections | update a Metabolic Network Collection
+[**GETCOLLECTIONS**](CollectionsApi.md#GETCOLLECTIONS) | **GET** /collections | get Metabolic Network Collections
 
 
-# **UPDATECOLLECTION**
-> CollectionResponse UPDATECOLLECTION(collection = var.collection)
+# **GETCOLLECTIONS**
+> CollectionsResponse GETCOLLECTIONS(id = var.id, permission = var.permission)
 
-update a Metabolic Network Collection
+get Metabolic Network Collections
 
-Update a Metabolic Network Collection
+Get public and/or private Metabolic Network Collections. If the id is specified, get the collection corresponding to this id
 
 ### Example
 ```R
 library(metexplore3api)
 
-# update a Metabolic Network Collection
+# get Metabolic Network Collections
 #
 # prepare function argument(s)
-var_collection <- Collection$new(123, "name_example", "description_example", 123) # Collection |  (Optional)
+var_id <- 56 # integer | id of the app (Optional)
+var_permission <- Permission$new() # Permission | permission of the user on the collection (Optional)
 
 api_instance <- CollectionsApi$new()
 # Configure HTTP bearer authorization: userAuth
@@ -29,8 +30,8 @@ api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # Configure API key authorization: appAuth
 # api_instance$api_client$api_keys["x-app-key"] <- Sys.getenv("API_KEY")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-# result <- api_instance$UPDATECOLLECTION(collection = var_collectiondata_file = "result.txt")
-result <- api_instance$UPDATECOLLECTION(collection = var_collection)
+# result <- api_instance$GETCOLLECTIONS(id = var_id, permission = var_permissiondata_file = "result.txt")
+result <- api_instance$GETCOLLECTIONS(id = var_id, permission = var_permission)
 dput(result)
 ```
 
@@ -38,11 +39,12 @@ dput(result)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **collection** | [**Collection**](Collection.md)|  | [optional] 
+ **id** | **integer**| id of the app | [optional] 
+ **permission** | [**Permission**](.md)| permission of the user on the collection | [optional] 
 
 ### Return type
 
-[**CollectionResponse**](CollectionResponse.md)
+[**CollectionsResponse**](CollectionsResponse.md)
 
 ### Authorization
 
@@ -50,14 +52,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | successful operation |  -  |
-| **400** | error in the query |  -  |
 | **401** | not authorized |  -  |
 | **404** | not found |  -  |
 

@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **login** | **character** | Name of the user, used to logged in | [optional] 
 **email** | **character** | email of the user | [optional] 
 **password** | **character** | Password of the user | [optional] 
-**last_visit_date** | **character** | Date of the user&#39;s last visit | [optional] [Pattern: ^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2}$] 
-**registration_date** | **character** | Date of the user&#39;s registration | [optional] [Pattern: ^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2}$] 
+**last_visit_date** | **character** | Date of the user&#39;s last visit | [optional] [Pattern: ^\\d{4}-\\d{1,2}-\\d{1,2}\\s\\d{1,2}:\\d{1,2}:\\d{1,2}$] 
+**registration_date** | **character** | Date of the user&#39;s registration | [optional] [Pattern: ^\\d{4}-\\d{1,2}-\\d{1,2}\\s\\d{1,2}:\\d{1,2}:\\d{1,2}$] 
 **token** | **character** | token of the user, returned when login | [optional] 
 
 
