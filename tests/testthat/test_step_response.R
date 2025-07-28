@@ -31,7 +31,7 @@ test_that("status", {
 
 test_that("steps", {
   # tests for the property `steps` (array[Step])
-  # Specific step of an analysis
+  # Array of steps
 
   # uncomment below to test the property
   #expect_equal(model.instance$`steps`, "EXPECTED_RESULT")

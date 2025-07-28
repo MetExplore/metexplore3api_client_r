@@ -10,7 +10,7 @@
 #' @field message Message to describe that it's ok or not character
 #' @field success Indicates if the response is a success or a fail character
 #' @field status Code of the response integer
-#' @field count  integer [optional]
+#' @field count  \link{CountResponseAllOfCount} [optional]
 #' @importFrom R6 R6Class
 #' @importFrom jsonlite fromJSON toJSON
 #' @export
@@ -50,9 +50,7 @@ CountResponse <- R6::R6Class(
         self$`status` <- `status`
       }
       if (!is.null(`count`)) {
-        if (!(is.numeric(`count`) && length(`count`) == 1)) {
-          stop(paste("Error! Invalid data for `count`. Must be an integer:", `count`))
-        }
+        stopifnot(R6::is.R6(`count`))
         self$`count` <- `count`
       }
     },
@@ -77,7 +75,7 @@ CountResponse <- R6::R6Class(
       }
       if (!is.null(self$`count`)) {
         CountResponseObject[["count"]] <-
-          self$`count`
+          self$`count`$toJSON()
       }
       CountResponseObject
     },
@@ -99,7 +97,9 @@ CountResponse <- R6::R6Class(
         self$`status` <- this_object$`status`
       }
       if (!is.null(this_object$`count`)) {
-        self$`count` <- this_object$`count`
+        `count_object` <- CountResponseAllOfCount$new()
+        `count_object`$fromJSON(jsonlite::toJSON(this_object$`count`, auto_unbox = TRUE, digits = NA))
+        self$`count` <- `count_object`
       }
       self
     },
@@ -137,9 +137,9 @@ CountResponse <- R6::R6Class(
         if (!is.null(self$`count`)) {
           sprintf(
           '"count":
-            %d
-                    ',
-          self$`count`
+          %s
+          ',
+          jsonlite::toJSON(self$`count`$toJSON(), auto_unbox = TRUE, digits = NA)
           )
         }
       )
@@ -157,7 +157,7 @@ CountResponse <- R6::R6Class(
       self$`message` <- this_object$`message`
       self$`success` <- this_object$`success`
       self$`status` <- this_object$`status`
-      self$`count` <- this_object$`count`
+      self$`count` <- CountResponseAllOfCount$new()$fromJSON(jsonlite::toJSON(this_object$`count`, auto_unbox = TRUE, digits = NA))
       self
     },
 

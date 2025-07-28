@@ -240,7 +240,7 @@ MappingOutput <- R6::R6Class(
         return(FALSE)
       }
 
-      if (!str_detect(self$`date`, "^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2}$")) {
+      if (!str_detect(self$`date`, "^\\d{4}-\\d{1,2}-\\d{1,2}\\s\\d{1,2}:\\d{1,2}:\\d{1,2}$")) {
         return(FALSE)
       }
 
@@ -273,8 +273,8 @@ MappingOutput <- R6::R6Class(
         invalid_fields["input"] <- "Non-nullable required field `input` cannot be null."
       }
 
-      if (!str_detect(self$`date`, "^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2}$")) {
-        invalid_fields["date"] <- "Invalid value for `date`, must conform to the pattern ^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2}$."
+      if (!str_detect(self$`date`, "^\\d{4}-\\d{1,2}-\\d{1,2}\\s\\d{1,2}:\\d{1,2}:\\d{1,2}$")) {
+        invalid_fields["date"] <- "Invalid value for `date`, must conform to the pattern ^\\d{4}-\\d{1,2}-\\d{1,2}\\s\\d{1,2}:\\d{1,2}:\\d{1,2}$."
       }
 
       # check if the required `map` is null

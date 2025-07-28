@@ -232,11 +232,11 @@ Analysis <- R6::R6Class(
     #'
     #' @return true if the values in all fields are valid.
     isValid = function() {
-      if (!str_detect(self$`date_creation`, "^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2}$")) {
+      if (!str_detect(self$`date_creation`, "^\\d{4}-\\d{1,2}-\\d{1,2}\\s\\d{1,2}:\\d{1,2}:\\d{1,2}$")) {
         return(FALSE)
       }
 
-      if (!str_detect(self$`date_edition`, "^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2}$")) {
+      if (!str_detect(self$`date_edition`, "^\\d{4}-\\d{1,2}-\\d{1,2}\\s\\d{1,2}:\\d{1,2}:\\d{1,2}$")) {
         return(FALSE)
       }
 
@@ -249,12 +249,12 @@ Analysis <- R6::R6Class(
     #' @return A list of invalid fields (if any).
     getInvalidFields = function() {
       invalid_fields <- list()
-      if (!str_detect(self$`date_creation`, "^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2}$")) {
-        invalid_fields["date_creation"] <- "Invalid value for `date_creation`, must conform to the pattern ^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2}$."
+      if (!str_detect(self$`date_creation`, "^\\d{4}-\\d{1,2}-\\d{1,2}\\s\\d{1,2}:\\d{1,2}:\\d{1,2}$")) {
+        invalid_fields["date_creation"] <- "Invalid value for `date_creation`, must conform to the pattern ^\\d{4}-\\d{1,2}-\\d{1,2}\\s\\d{1,2}:\\d{1,2}:\\d{1,2}$."
       }
 
-      if (!str_detect(self$`date_edition`, "^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2}$")) {
-        invalid_fields["date_edition"] <- "Invalid value for `date_edition`, must conform to the pattern ^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2}$."
+      if (!str_detect(self$`date_edition`, "^\\d{4}-\\d{1,2}-\\d{1,2}\\s\\d{1,2}:\\d{1,2}:\\d{1,2}$")) {
+        invalid_fields["date_edition"] <- "Invalid value for `date_edition`, must conform to the pattern ^\\d{4}-\\d{1,2}-\\d{1,2}\\s\\d{1,2}:\\d{1,2}:\\d{1,2}$."
       }
 
       invalid_fields

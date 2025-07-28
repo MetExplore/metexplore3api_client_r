@@ -5,30 +5,6 @@ context("Test ProteinsApi")
 
 api_instance <- ProteinsApi$new()
 
-test_that("COUNTPROTEINS", {
-  # tests for COUNTPROTEINS
-  # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
-  # get the number of proteins for a network
-  # get the number of proteins for a network
-  # @param id_network integer the id_network for the proteins
-  # @return [CountResponse]
-
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
-})
-
-test_that("DELPROTEIN", {
-  # tests for DELPROTEIN
-  # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
-  # del Protein
-  # delete for Protein
-  # @param protein array[Protein]  (optional)
-  # @return [ProteinsResponse]
-
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
-})
-
 test_that("GETPROTEINS", {
   # tests for GETPROTEINS
   # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
@@ -37,30 +13,6 @@ test_that("GETPROTEINS", {
   # @param id integer the id for the Protein (optional)
   # @param id_network integer the id_network for the Protein (optional)
   # @param id_collection integer the id_collection for the Protein (optional)
-  # @return [ProteinsResponse]
-
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
-})
-
-test_that("POSTPROTEIN", {
-  # tests for POSTPROTEIN
-  # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
-  # add Protein
-  # add for Protein
-  # @param protein array[Protein]  (optional)
-  # @return [ProteinResponse]
-
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
-})
-
-test_that("UPDATEPROTEIN", {
-  # tests for UPDATEPROTEIN
-  # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
-  # update Protein
-  # update for Protein
-  # @param protein array[Protein]  (optional)
   # @return [ProteinsResponse]
 
   # uncomment below to test the operation

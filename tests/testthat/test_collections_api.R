@@ -5,13 +5,14 @@ context("Test CollectionsApi")
 
 api_instance <- CollectionsApi$new()
 
-test_that("UPDATECOLLECTION", {
-  # tests for UPDATECOLLECTION
+test_that("GETCOLLECTIONS", {
+  # tests for GETCOLLECTIONS
   # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
-  # update a Metabolic Network Collection
-  # Update a Metabolic Network Collection
-  # @param collection Collection  (optional)
-  # @return [CollectionResponse]
+  # get Metabolic Network Collections
+  # Get public and/or private Metabolic Network Collections. If the id is specified, get the collection corresponding to this id
+  # @param id integer id of the app (optional)
+  # @param permission Permission permission of the user on the collection (optional)
+  # @return [CollectionsResponse]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")

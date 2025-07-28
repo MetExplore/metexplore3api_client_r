@@ -19,10 +19,15 @@ Name | Type | Description | Notes
 **description** | **character** | Description of the network | [optional] 
 **url** | **character** | Url of the network | [optional] 
 **identifier_origin** | **character** | Origin of the identifiers in the network | [optional] 
-**date_creation** | **character** | Creation date of the Network (ISO 8601 full-time format) | [optional] [Pattern: ^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2}$] 
-**date_last_modif** | **character** | Last modification date of the Network (ISO 8601 full-time format) | [optional] [Pattern: ^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2}$] 
+**date_creation** | **character** | Creation date of the Network (ISO 8601 full-time format) | [optional] [Pattern: ^\\d{4}-\\d{1,2}-\\d{1,2}\\s\\d{1,2}:\\d{1,2}:\\d{1,2}$] 
+**date_last_modif** | **character** | Last modification date of the Network (ISO 8601 full-time format) | [optional] [Pattern: ^\\d{4}-\\d{1,2}-\\d{1,2}\\s\\d{1,2}:\\d{1,2}:\\d{1,2}$] 
 **top** | **integer** | Indicates if the Network is among the top Networks in MetExplore | [optional] [default to 0] 
 **visits** | **integer** | Number of times where this Network has been selected | [optional] 
 **permission** | [**Permission**](Permission.md) | Permission of the user on the network | [optional] [Enum: ] 
+**nb_pathways** | **integer** | number of pathways in the network | [optional] 
+**nb_reactions** | **integer** | number of reactions in the network | [optional] 
+**nb_metabolites** | **integer** | number of metabolites in the network | [optional] 
+**nb_genes** | **integer** | number of genes in the network | [optional] 
+**user_visits** | **integer** | Number of visits to the network by the authenticated user | [optional] 
 
 

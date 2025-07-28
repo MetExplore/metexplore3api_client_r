@@ -5,30 +5,6 @@ context("Test ReactionsApi")
 
 api_instance <- ReactionsApi$new()
 
-test_that("COUNTREACTIONS", {
-  # tests for COUNTREACTIONS
-  # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
-  # get the number of reactions in a network
-  # get the number of reactions in a network
-  # @param id_network integer the id_network for the reactions
-  # @return [CountResponse]
-
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
-})
-
-test_that("DELREACTION", {
-  # tests for DELREACTION
-  # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
-  # delete Reaction
-  # deleteReaction for Reaction
-  # @param reactions_response array[ReactionsResponse]  (optional)
-  # @return [ReactionsResponse]
-
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
-})
-
 test_that("GETREACTIONS", {
   # tests for GETREACTIONS
   # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
@@ -36,30 +12,6 @@ test_that("GETREACTIONS", {
   # getReaction from Reaction
   # @param id_network integer the id of the network (optional)
   # @param id_collection integer the id of the collection for the Reaction (optional)
-  # @return [ReactionsResponse]
-
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
-})
-
-test_that("POSTREACTION", {
-  # tests for POSTREACTION
-  # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
-  # add Reaction
-  # addReaction for Reaction
-  # @param reaction array[Reaction]  (optional)
-  # @return [ReactionsResponse]
-
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
-})
-
-test_that("UPDATEREACTION", {
-  # tests for UPDATEREACTION
-  # base path: https://metexplore.toulouse.inrae.fr/metexplore3-api
-  # update Reaction
-  # updateReaction for Reaction
-  # @param reactions_response array[ReactionsResponse]  (optional)
   # @return [ReactionsResponse]
 
   # uncomment below to test the operation

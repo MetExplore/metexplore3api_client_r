@@ -1,6 +1,6 @@
 # metexplore3api::Permission
 
-Permission of the user on a collection
+Permission for a user on a resource
 
 ## Properties
 Name | Type | Description | Notes
