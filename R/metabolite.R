@@ -11,6 +11,8 @@
 #' @field name name character [optional]
 #' @field db_identifier unique identifier character [optional]
 #' @field id_collection database id of the collection integer [optional]
+#' @field caas caas for Metabolite character [optional]
+#' @field smiles smiles for Metabolite character [optional]
 #' @field chemical_formula chemical_formula for Metabolite character [optional]
 #' @field weight weight for Metabolite character [optional]
 #' @field mono_iso_mass mono_iso_mass for Metabolite character [optional]
@@ -30,6 +32,8 @@ Metabolite <- R6::R6Class(
     `name` = NULL,
     `db_identifier` = NULL,
     `id_collection` = NULL,
+    `caas` = NULL,
+    `smiles` = NULL,
     `chemical_formula` = NULL,
     `weight` = NULL,
     `mono_iso_mass` = NULL,
@@ -47,6 +51,8 @@ Metabolite <- R6::R6Class(
     #' @param name name
     #' @param db_identifier unique identifier
     #' @param id_collection database id of the collection
+    #' @param caas caas for Metabolite
+    #' @param smiles smiles for Metabolite
     #' @param chemical_formula chemical_formula for Metabolite
     #' @param weight weight for Metabolite
     #' @param mono_iso_mass mono_iso_mass for Metabolite
@@ -57,7 +63,7 @@ Metabolite <- R6::R6Class(
     #' @param inchi inchi for Metabolite
     #' @param sbo Systems Biology Ontology identifier for Metabolite
     #' @param ... Other optional arguments.
-    initialize = function(`id` = NULL, `name` = NULL, `db_identifier` = NULL, `id_collection` = NULL, `chemical_formula` = NULL, `weight` = NULL, `mono_iso_mass` = NULL, `exact_neutral_mass` = NULL, `average_mass` = NULL, `generic` = NULL, `charge` = NULL, `inchi` = NULL, `sbo` = NULL, ...) {
+    initialize = function(`id` = NULL, `name` = NULL, `db_identifier` = NULL, `id_collection` = NULL, `caas` = NULL, `smiles` = NULL, `chemical_formula` = NULL, `weight` = NULL, `mono_iso_mass` = NULL, `exact_neutral_mass` = NULL, `average_mass` = NULL, `generic` = NULL, `charge` = NULL, `inchi` = NULL, `sbo` = NULL, ...) {
       if (!is.null(`id`)) {
         if (!(is.numeric(`id`) && length(`id`) == 1)) {
           stop(paste("Error! Invalid data for `id`. Must be an integer:", `id`))
@@ -81,6 +87,18 @@ Metabolite <- R6::R6Class(
           stop(paste("Error! Invalid data for `id_collection`. Must be an integer:", `id_collection`))
         }
         self$`id_collection` <- `id_collection`
+      }
+      if (!is.null(`caas`)) {
+        if (!(is.character(`caas`) && length(`caas`) == 1)) {
+          stop(paste("Error! Invalid data for `caas`. Must be a string:", `caas`))
+        }
+        self$`caas` <- `caas`
+      }
+      if (!is.null(`smiles`)) {
+        if (!(is.character(`smiles`) && length(`smiles`) == 1)) {
+          stop(paste("Error! Invalid data for `smiles`. Must be a string:", `smiles`))
+        }
+        self$`smiles` <- `smiles`
       }
       if (!is.null(`chemical_formula`)) {
         if (!(is.character(`chemical_formula`) && length(`chemical_formula`) == 1)) {
@@ -160,6 +178,14 @@ Metabolite <- R6::R6Class(
         MetaboliteObject[["id_collection"]] <-
           self$`id_collection`
       }
+      if (!is.null(self$`caas`)) {
+        MetaboliteObject[["caas"]] <-
+          self$`caas`
+      }
+      if (!is.null(self$`smiles`)) {
+        MetaboliteObject[["smiles"]] <-
+          self$`smiles`
+      }
       if (!is.null(self$`chemical_formula`)) {
         MetaboliteObject[["chemical_formula"]] <-
           self$`chemical_formula`
@@ -217,6 +243,12 @@ Metabolite <- R6::R6Class(
       }
       if (!is.null(this_object$`id_collection`)) {
         self$`id_collection` <- this_object$`id_collection`
+      }
+      if (!is.null(this_object$`caas`)) {
+        self$`caas` <- this_object$`caas`
+      }
+      if (!is.null(this_object$`smiles`)) {
+        self$`smiles` <- this_object$`smiles`
       }
       if (!is.null(this_object$`chemical_formula`)) {
         self$`chemical_formula` <- this_object$`chemical_formula`
@@ -284,6 +316,22 @@ Metabolite <- R6::R6Class(
             %d
                     ',
           self$`id_collection`
+          )
+        },
+        if (!is.null(self$`caas`)) {
+          sprintf(
+          '"caas":
+            "%s"
+                    ',
+          self$`caas`
+          )
+        },
+        if (!is.null(self$`smiles`)) {
+          sprintf(
+          '"smiles":
+            "%s"
+                    ',
+          self$`smiles`
           )
         },
         if (!is.null(self$`chemical_formula`)) {
@@ -374,6 +422,8 @@ Metabolite <- R6::R6Class(
       self$`name` <- this_object$`name`
       self$`db_identifier` <- this_object$`db_identifier`
       self$`id_collection` <- this_object$`id_collection`
+      self$`caas` <- this_object$`caas`
+      self$`smiles` <- this_object$`smiles`
       self$`chemical_formula` <- this_object$`chemical_formula`
       self$`weight` <- this_object$`weight`
       self$`mono_iso_mass` <- this_object$`mono_iso_mass`
