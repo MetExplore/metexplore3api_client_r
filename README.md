@@ -38,11 +38,10 @@ R CMD INSTALL --preclean metexplore3api_1.0.0.tar.gz
 install.packages("metexplore3api")
 ```
 
-To install directly from Github, use `devtools`:
+To install directly from Github:
 ```R
-install.packages("devtools")
-library(devtools)
-install_github("GIT_USER_ID/GIT_REPO_ID")
+install.packages("remotes") 
+remotes::install_github("MetExplore/metexplore3api_client_r")
 ```
 
 To install the package from a local file:
@@ -54,18 +53,117 @@ install.packages("metexplore3api_1.0.0.tar.gz", repos = NULL, type = "source")
 
 ```R
 library(metexplore3api)
+
+  # Spécifier l'identifiant du réseau
+  network_id <- 1
+  
+  ###########################
+  ### Genes
+  ###########################
+    
+  # #Créer une instance de la classe GenesApi
+  api <- GenesApi$new()
+
+  # Appel de l’API pour récuperer les genes du réseau
+  result <- api$GETGENES(network_id)
+  results <- result$results
+
+
+  df_genes <- data.frame(
+    name = sapply(result$results, function(x) if (!is.null(x$name)) x$name else NA),
+    identifier = sapply(result$results, function(x) if (!is.null(x$db_identifier)) x$db_identifier else NA),
+    stringsAsFactors = FALSE)
+
+  View(df_genes)
+
+  ###########################
+  ### Proteins
+  ###########################
+  api <- ProteinsApi$new()
+  result <- api$GETPROTEINS(NULL,network_id,NULL)
+  results <- result$results
+
+
+  df_proteins <- data.frame(
+    name = sapply(result$results, function(x) if (!is.null(x$name)) x$name else NA),
+    identifier = sapply(result$results, function(x) if (!is.null(x$db_identifier)) x$name else NA),
+    stringsAsFactors = FALSE)
+
+  View(df_proteins)
+
+
+  ###########################
+  ### Enzymes
+  ###########################
+
+  api <- EnzymesApi$new()
+  #print(api$GETENZYMES)
+  result <- api$GETENZYMES(network_id)
+  results <- result$results
+
+
+  df_enzymes <- data.frame(
+    name = sapply(result$results, function(x) if (!is.null(x$name)) x$name else NA),
+    identifier = sapply(result$results, function(x) if (!is.null(x$db_identifier)) x$db_identifier else NA),
+    stringsAsFactors = FALSE)
+
+  View(df_enzymes)
+
+  ###########################
+  ### Reactions
+  ###########################
+
+  api <- ReactionsApi$new()
+
+  result <- api$GETREACTIONS(network_id)
+  results <- result$results
+
+
+  df_reactions <- data.frame(
+    name = sapply(result$results, function(x) if (!is.null(x$name)) x$name else NA),
+    identifier = sapply(result$results, function(x) if (!is.null(x$db_identifier)) x$db_identifier else NA),
+    ec   = sapply(result$results, function(x) if (!is.null(x$ec)) x$ec else NA),
+    stringsAsFactors = FALSE)
+
+  View(df_reactions)
+  
+  ###########################
+  ### Metabolites
+  ###########################
+
+  api <- MetabolitesApi$new()
+  response <- api$GETMETABOLITESWithHttpInfo(id_network = network_id)
+  if (response$status_code >= 200 && response$status_code < 300) {
+     json <- response$response_as_text()
+     parsed <- jsonlite::fromJSON(json, simplifyDataFrame = TRUE)
+  }
+  else {
+     stop("Erreur lors de l'appel API : ", response$status_code)
+  }
+  df_metabolites <- parsed$results
+  View(df_metabolites)
+  
+  ###########################
+  ### Pathways
+  ###########################
+  
+  api <- PathwaysApi$new()
+
+  result <- api$GETPATHWAYS(NULL,network_id, NULL)
+  results <- result$results
+
+
+  df_pathways <- data.frame(
+    name = sapply(result$results, function(x) if (!is.null(x$name)) x$name else NA),
+    identifier = sapply(result$results, function(x) if (!is.null(x$db_identifier)) x$db_identifier else NA),
+    stringsAsFactors = FALSE)
+
+  View(df_pathways)
+
+
 ```
 
-### Reformat code
 
-To reformat code using [styler](https://styler.r-lib.org/index.html), please run the following in the R console:
-
-```R
-install.packages("remotes")
-remotes::install_github("r-lib/styler@v1.7.0.9003")
-library("styler")
-style_dir()
-```
 
 ## Documentation for API Endpoints
 
